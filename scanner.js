@@ -2,9 +2,11 @@ const fs = require('node:fs');
 
 const DATA_URL = 'https://cryptobubbles.net/backend/data/bubbles1000.usd.json';
 const STATE_PATH = 'data/previous-scan.json';
-const REPORT_PATH = 'latest-scan.txt';
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+const VISIBLE_RANK_MIN = 1;
+const VISIBLE_RANK_MAX = 100;
+const TELEGRAM_LIMIT = 4096;
 
 if (!BOT_TOKEN || !CHAT_ID) {
   throw new Error('Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID GitHub Secrets.');
@@ -20,13 +22,6 @@ function signed(value) {
   return `${value > 0 ? '+' : ''}${value.toFixed(2)}%`;
 }
 
-function price(value) {
-  const n = Number(value);
-  if (!Number.isFinite(n)) return 'n/a';
-  return n >= 1 ? n.toLocaleString('en-US', { maximumFractionDigits: 4 }) :
-    n.toLocaleString('en-US', { maximumSignificantDigits: 6 });
-}
-
 async function main() {
   const response = await fetch(DATA_URL, {
     headers: { 'user-agent': 'CryptoBubblesTelegramScanner/1.0' },
@@ -34,9 +29,25 @@ async function main() {
   });
   if (!response.ok) throw new Error(`Crypto Bubbles data request failed: HTTP ${response.status}`);
 
-  const coins = await response.json();
-  if (!Array.isArray(coins) || coins.length === 0) {
+  const allCoins = await response.json();
+  if (!Array.isArray(allCoins) || allCoins.length === 0) {
     throw new Error('Crypto Bubbles returned an empty or invalid coin list.');
+  }
+
+  // The site's visible selector defaults to ranks 1–100.
+  // Scan only coins in that displayed range, and only those with a 5m value.
+  const visibleCoins = allCoins
+    .filter(coin => {
+      const rank = Number(coin.rank);
+      return Number.isFinite(rank) &&
+        rank >= VISIBLE_RANK_MIN &&
+        rank <= VISIBLE_RANK_MAX &&
+        pct(coin.performance?.min5) !== null;
+    })
+    .sort((a, b) => Number(a.rank) - Number(b.rank));
+
+  if (visibleCoins.length === 0) {
+    throw new Error('No coins with 5-minute performance were found in the visible rank range 1–100.');
   }
 
   let previous = {};
@@ -44,123 +55,115 @@ async function main() {
     try {
       previous = JSON.parse(fs.readFileSync(STATE_PATH, 'utf8'));
     } catch (error) {
-      console.warn('Previous state could not be read; treating this as the first scan:', error.message);
+      console.warn('Previous scan state could not be read; starting fresh:', error.message);
     }
   }
 
   const nextState = {};
-  const rows = coins.map(coin => {
+  const rows = visibleCoins.map(coin => {
     const symbol = String(coin.symbol || coin.slug || coin.id);
     const current = pct(coin.performance?.min5);
     const old = previous[symbol];
-    let risingStreak = 0;
+    const risingStreak = current > 0 && old &&
+      Number.isFinite(old.min5) && current > old.min5
+      ? (old.risingStreak || 0) + 1
+      : 0;
 
-    if (current !== null && old && Number.isFinite(old.min5) && current > 0 && current > old.min5) {
-      risingStreak = (old.risingStreak || 0) + 1;
-    }
+    const trend = current > 0 ? 'GREEN' : current < 0 ? 'RED' : 'FLAT';
+    nextState[symbol] = { min5: current, risingStreak };
 
-    const trend = current === null ? 'NO DATA' :
-      current > 0 ? 'GREEN' : current < 0 ? 'RED' : 'FLAT';
-
-    const row = {
-      rank: Number(coin.rank) || 999999,
+    return {
+      rank: Number(coin.rank),
       name: String(coin.name || symbol),
       symbol,
-      price: Number(coin.price),
-      marketcap: Number(coin.marketcap),
-      volume: Number(coin.volume),
       min5: current,
-      day: pct(coin.performance?.day),
       trend,
       risingStreak,
       improving: risingStreak >= 2
     };
-
-    nextState[symbol] = { min5: current, risingStreak };
-    return row;
   });
 
-  const green = rows.filter(c => c.trend === 'GREEN');
-  const red = rows.filter(c => c.trend === 'RED');
+  const green = rows.filter(c => c.trend === 'GREEN').sort((a, b) => b.min5 - a.min5);
+  const red = rows.filter(c => c.trend === 'RED').sort((a, b) => a.min5 - b.min5);
   const flat = rows.filter(c => c.trend === 'FLAT');
-  const missing = rows.filter(c => c.trend === 'NO DATA');
   const improving = rows.filter(c => c.improving).sort((a, b) => b.min5 - a.min5);
-  const strongest = [...green].sort((a, b) => b.min5 - a.min5).slice(0, 5);
-  const weakest = [...red].sort((a, b) => a.min5 - b.min5).slice(0, 5);
 
-  const now = new Date();
-  const stamp = now.toISOString().replace('T', ' ').slice(0, 16) + ' UTC';
-  const lines = [
-    'CRYPTO BUBBLES — 5 MINUTE MARKET SCAN',
-    `Scan time: ${stamp}`,
-    `Coins scanned: ${rows.length} | Green: ${green.length} | Red: ${red.length} | Flat: ${flat.length} | Missing: ${missing.length}`,
-    '',
-    'CONTINUOUSLY IMPROVING',
-    'Definition: positive 5-minute performance that increased on at least two consecutive scan-to-scan comparisons.',
-    improving.length ? improving.map(c => `${c.symbol} (${c.name}) ${signed(c.min5)} | improving comparisons: ${c.risingStreak}`).join('\n') : 'No coins met the consecutive-improvement rule this scan.',
-    '',
-    'STRONGEST 5-MINUTE MOVERS',
-    strongest.length ? strongest.map(c => `${c.symbol} ${signed(c.min5)}`).join(' | ') : 'None',
-    '',
-    'WEAKEST 5-MINUTE MOVERS',
-    weakest.length ? weakest.map(c => `${c.symbol} ${signed(c.min5)}`).join(' | ') : 'None',
-    '',
-    'ALL COINS (sorted by 5-minute performance)',
-    'Rank | Symbol | Name | Price USD | 5m % | 24h % | Trend | Rising comparisons'
-  ];
+  const stamp = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Asia/Colombo',
+    dateStyle: 'medium',
+    timeStyle: 'short',
+    hour12: false
+  }).format(new Date());
 
-  rows.sort((a, b) => {
-    const av = a.min5 === null ? -Infinity : a.min5;
-    const bv = b.min5 === null ? -Infinity : b.min5;
-    return bv - av;
-  });
-
-  for (const c of rows) {
-    lines.push([
-      c.rank,
-      c.symbol,
-      c.name.replace(/[|\r\n]/g, ' '),
-      price(c.price),
-      signed(c.min5),
-      signed(c.day),
-      c.trend,
-      c.risingStreak
-    ].join(' | '));
-  }
-
-  const report = lines.join('\n') + '\n';
-  fs.mkdirSync('data', { recursive: true });
-  fs.writeFileSync(STATE_PATH, JSON.stringify(nextState, null, 2) + '\n');
-  fs.writeFileSync(REPORT_PATH, report);
-
-  const topUp = strongest.map(c => `${c.symbol} ${signed(c.min5)}`).join(', ') || 'None';
-  const topDown = weakest.map(c => `${c.symbol} ${signed(c.min5)}`).join(', ') || 'None';
-  const caption = [
-    '🫧 CRYPTO BUBBLES — 5m SCAN',
-    `🕒 ${stamp}`,
-    `🪙 Scanned: ${rows.length} | 🟢 ${green.length} | 🔴 ${red.length} | ⚪ ${flat.length}`,
-    `📈 Improving for 2+ consecutive comparisons: ${improving.length}`,
-    `🚀 Top: ${topUp}`,
-    `🔻 Bottom: ${topDown}`,
-    'Full coin-by-coin report is attached.'
+  const section = (title, list) => [
+    title,
+    list.length
+      ? list.map(c => `${c.symbol} ${signed(c.min5)}${c.improving ? ' 📈' : ''}`).join('  |  ')
+      : 'None'
   ].join('\n');
 
-  const form = new FormData();
-  form.append('chat_id', CHAT_ID);
-  form.append('caption', caption.slice(0, 1000));
-  form.append('document', new Blob([report], { type: 'text/plain' }), 'crypto-bubbles-5m-report.txt');
+  const lines = [
+    '🫧 CRYPTO BUBBLES — 5m SCAN',
+    `🕒 ${stamp} (Sri Lanka time)`,
+    `👀 Website visible range: ranks ${VISIBLE_RANK_MIN}–${VISIBLE_RANK_MAX}`,
+    `🪙 Coins scanned: ${rows.length} | 🟢 ${green.length} | 🔴 ${red.length} | ⚪ ${flat.length}`,
+    '',
+    section('🟢 GREEN / UP', green),
+    '',
+    section('🔴 RED / DOWN', red),
+    '',
+    section('⚪ FLAT', flat),
+    '',
+    section('📈 CONTINUOUSLY IMPROVING (2+ consecutive scans)', improving),
+    '',
+    '↗️ = positive 5m change increased on each of the last two scan comparisons.'
+  ];
 
-  const telegramResponse = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendDocument`, {
-    method: 'POST',
-    body: form,
-    signal: AbortSignal.timeout(30000)
-  });
-  const telegramResult = await telegramResponse.json();
-  if (!telegramResponse.ok || !telegramResult.ok) {
-    throw new Error(`Telegram sendDocument failed: ${JSON.stringify(telegramResult)}`);
+  let message = lines.join('\n');
+  if (message.length > TELEGRAM_LIMIT) {
+    // Keep a single normal text message; trim only lower-priority detail if the
+    // Telegram limit is exceeded, never send a document or split into messages.
+    const compactLines = [
+      '🫧 CRYPTO BUBBLES — 5m SCAN',
+      `🕒 ${stamp} (Sri Lanka time)`,
+      `👀 Visible ranks ${VISIBLE_RANK_MIN}–${VISIBLE_RANK_MAX}; scanned ${rows.length}`,
+      `🟢 ${green.length} | 🔴 ${red.length} | ⚪ ${flat.length}`,
+      '',
+      `🟢 ${green.map(c => `${c.symbol} ${signed(c.min5)}`).join(' | ')}`,
+      '',
+      `🔴 ${red.map(c => `${c.symbol} ${signed(c.min5)}`).join(' | ')}`,
+      '',
+      `⚪ ${flat.map(c => c.symbol).join(' | ') || 'None'}`,
+      '',
+      `📈 Improving 2+ scans: ${improving.map(c => `${c.symbol} ${signed(c.min5)}`).join(' | ') || 'None'}`
+    ];
+    message = compactLines.join('\n');
   }
 
-  console.log(`Telegram report sent. Coins: ${rows.length}; green: ${green.length}; red: ${red.length}; flat: ${flat.length}; improving: ${improving.length}`);
+  if (message.length > TELEGRAM_LIMIT) {
+    throw new Error(`The visible-coin text report is ${message.length} characters, exceeding Telegram's ${TELEGRAM_LIMIT}-character message limit. No partial message was sent.`);
+  }
+
+  fs.mkdirSync('data', { recursive: true });
+  fs.writeFileSync(STATE_PATH, JSON.stringify(nextState, null, 2) + '\n');
+
+  const telegramResponse = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({
+      chat_id: CHAT_ID,
+      text: message,
+      disable_web_page_preview: true
+    }),
+    signal: AbortSignal.timeout(30000)
+  });
+
+  const telegramResult = await telegramResponse.json();
+  if (!telegramResponse.ok || !telegramResult.ok) {
+    throw new Error(`Telegram sendMessage failed: ${JSON.stringify(telegramResult)}`);
+  }
+
+  console.log(`Telegram text message sent. Visible coins: ${rows.length}; green: ${green.length}; red: ${red.length}; flat: ${flat.length}; improving: ${improving.length}; characters: ${message.length}`);
 }
 
 main().catch(error => {
