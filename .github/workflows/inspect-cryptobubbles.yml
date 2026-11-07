@@ -19,7 +19,7 @@ jobs:
           npm install playwright
           npx playwright install --with-deps chromium
 
-      - name: Inspect Crypto Bubbles page and data requests
+      - name: Inspect Crypto Bubbles page and market data
         run: |
           cat > inspect.js <<'EOF'
           const { chromium } = require('playwright');
@@ -31,6 +31,7 @@ jobs:
             const jsonResponses = [];
             const sockets = [];
             const socketFrames = [];
+            let bubbleStats = null;
 
             page.on('request', request => {
               if (['xhr', 'fetch'].includes(request.resourceType())) {
@@ -45,28 +46,42 @@ jobs:
             page.on('websocket', ws => {
               sockets.push(ws.url().slice(0, 400));
               ws.on('framereceived', event => {
-                const payload = typeof event.payload === 'string'
-                  ? event.payload
-                  : '[binary frame]';
-                socketFrames.push({
-                  url: ws.url().slice(0, 250),
-                  sample: payload.slice(0, 1000)
-                });
+                const payload = typeof event.payload === 'string' ? event.payload : '[binary frame]';
+                socketFrames.push({ url: ws.url().slice(0, 250), sample: payload.slice(0, 800) });
               });
             });
 
             page.on('response', async response => {
               const contentType = response.headers()['content-type'] || '';
-              if (contentType.includes('application/json')) {
-                try {
-                  const body = await response.text();
-                  jsonResponses.push({
-                    status: response.status(),
-                    url: response.url().slice(0, 400),
-                    sample: body.slice(0, 1200)
-                  });
-                } catch (e) {}
-              }
+              if (!contentType.includes('application/json')) return;
+              try {
+                const body = await response.text();
+                jsonResponses.push({
+                  status: response.status(),
+                  url: response.url().slice(0, 400),
+                  sample: body.slice(0, 1000)
+                });
+
+                if (response.url().includes('/backend/data/bubbles')) {
+                  const coins = JSON.parse(body);
+                  const min5Present = coins.filter(c => Number.isFinite(c.performance?.min5)).length;
+                  bubbleStats = {
+                    endpoint: response.url(),
+                    totalCoins: coins.length,
+                    min5Present,
+                    min5Missing: coins.length - min5Present,
+                    sampleCoins: coins.slice(0, 12).map(c => ({
+                      name: c.name,
+                      symbol: c.symbol,
+                      rank: c.rank,
+                      price: c.price,
+                      min5: c.performance?.min5,
+                      day: c.performance?.day,
+                      volume: c.volume
+                    }))
+                  };
+                }
+              } catch (e) {}
             });
 
             try {
@@ -77,14 +92,14 @@ jobs:
               await page.waitForTimeout(18000);
 
               const title = await page.title();
-              const visibleText = (await page.locator('body').innerText()).slice(0, 2500);
+              const visibleText = (await page.locator('body').innerText()).slice(0, 1800);
               const controls = await page.locator('button, [role="button"], select, option')
                 .evaluateAll(nodes => nodes.map(n => ({
                   tag: n.tagName,
                   text: (n.innerText || n.textContent || '').trim().slice(0, 80),
                   aria: n.getAttribute('aria-label'),
                   title: n.getAttribute('title')
-                })).filter(x => x.text || x.aria || x.title).slice(0, 100));
+                })).filter(x => x.text || x.aria || x.title).slice(0, 80));
 
               const summary = [
                 '# Crypto Bubbles inspection results',
@@ -93,14 +108,19 @@ jobs:
                 '- Title: ' + title,
                 '- URL: ' + page.url(),
                 '',
-                '## Visible page text (first 2,500 characters)',
+                '## Visible page text',
                 '~~~text',
                 visibleText,
                 '~~~',
                 '',
-                '## Timeframe / page controls',
+                '## Page controls',
                 '~~~json',
                 JSON.stringify(controls, null, 2),
+                '~~~',
+                '',
+                '## Market data endpoint validation',
+                '~~~json',
+                JSON.stringify(bubbleStats, null, 2),
                 '~~~',
                 '',
                 '## XHR / Fetch requests',
@@ -113,24 +133,16 @@ jobs:
                 JSON.stringify(sockets, null, 2),
                 '~~~',
                 '',
-                '## WebSocket received message samples',
+                '## JSON response samples',
                 '~~~json',
-                JSON.stringify(socketFrames.slice(0, 20), null, 2),
-                '~~~',
-                '',
-                '## JSON responses',
-                '~~~json',
-                JSON.stringify(jsonResponses.slice(0, 20), null, 2),
+                JSON.stringify(jsonResponses.slice(0, 12), null, 2),
                 '~~~'
               ].join('\n');
 
               require('fs').writeFileSync('inspection-summary.md', summary);
               require('fs').appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary + '\n');
-              console.log('Inspection completed. Open the job Summary tab for readable results.');
-              console.log('XHR/FETCH count:', requests.length);
-              console.log('WebSocket count:', sockets.length);
-              console.log('WebSocket frame count:', socketFrames.length);
-              console.log('JSON response count:', jsonResponses.length);
+              console.log('Inspection complete. Open the Summary tab.');
+              console.log('Bubble data stats:', JSON.stringify(bubbleStats));
             } catch (e) {
               console.log('INSPECTION_ERROR:', e.stack || String(e));
               process.exitCode = 1;
