@@ -1,10 +1,10 @@
-name: Inspect Crypto Bubbles Data
+name: Inspect Visible Crypto Bubbles
 
 on:
   workflow_dispatch:
 
 jobs:
-  inspect-site:
+  inspect-visible-bubbles:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
@@ -19,145 +19,63 @@ jobs:
           npm install playwright
           npx playwright install --with-deps chromium
 
-      - name: Inspect Crypto Bubbles page and market data
+      - name: Inspect actual visible heatmap bubbles
         run: |
-          cat > inspect.js <<'EOF'
+          cat > visible.js <<'EOF'
           const { chromium } = require('playwright');
-
           (async () => {
             const browser = await chromium.launch({ headless: true });
             const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
-            const requests = [];
-            const jsonResponses = [];
-            const sockets = [];
-            const socketFrames = [];
-            let bubbleStats = null;
-
-            page.on('request', request => {
-              if (['xhr', 'fetch'].includes(request.resourceType())) {
-                requests.push({
-                  method: request.method(),
-                  type: request.resourceType(),
-                  url: request.url().slice(0, 400)
-                });
-              }
-            });
-
-            page.on('websocket', ws => {
-              sockets.push(ws.url().slice(0, 400));
-              ws.on('framereceived', event => {
-                const payload = typeof event.payload === 'string' ? event.payload : '[binary frame]';
-                socketFrames.push({ url: ws.url().slice(0, 250), sample: payload.slice(0, 800) });
-              });
-            });
-
-            page.on('response', async response => {
-              const contentType = response.headers()['content-type'] || '';
-              if (!contentType.includes('application/json')) return;
-              try {
-                const body = await response.text();
-                jsonResponses.push({
-                  status: response.status(),
-                  url: response.url().slice(0, 400),
-                  sample: body.slice(0, 1000)
-                });
-
-                if (response.url().includes('/backend/data/bubbles')) {
-                  const coins = JSON.parse(body);
-                  const min5Present = coins.filter(c => Number.isFinite(c.performance?.min5)).length;
-                  bubbleStats = {
-                    endpoint: response.url(),
-                    totalCoins: coins.length,
-                    min5Present,
-                    min5Missing: coins.length - min5Present,
-                    sampleCoins: coins.slice(0, 12).map(c => ({
-                      name: c.name,
-                      symbol: c.symbol,
-                      rank: c.rank,
-                      price: c.price,
-                      min5: c.performance?.min5,
-                      day: c.performance?.day,
-                      volume: c.volume
-                    }))
-                  };
-                }
-              } catch (e) {}
-            });
-
+            const report = {};
             try {
-              await page.goto('https://cryptobubbles.net/en', {
-                waitUntil: 'domcontentloaded',
-                timeout: 60000
-              });
-              await page.waitForTimeout(18000);
+              await page.goto('https://cryptobubbles.net/en', { waitUntil: 'domcontentloaded', timeout: 60000 });
+              await page.waitForTimeout(20000);
 
-              const title = await page.title();
-              const visibleText = (await page.locator('body').innerText()).slice(0, 1800);
-              const controls = await page.locator('button, [role="button"], select, option')
-                .evaluateAll(nodes => nodes.map(n => ({
-                  tag: n.tagName,
-                  text: (n.innerText || n.textContent || '').trim().slice(0, 80),
-                  aria: n.getAttribute('aria-label'),
-                  title: n.getAttribute('title')
-                })).filter(x => x.text || x.aria || x.title).slice(0, 80));
+              report.title = await page.title();
+              report.viewport = await page.evaluate(() => ({ width: innerWidth, height: innerHeight, dpr: devicePixelRatio }));
+              report.bodyText = (await page.locator('body').innerText()).slice(0, 3000);
 
-              const summary = [
-                '# Crypto Bubbles inspection results',
-                '',
-                '## Page',
-                '- Title: ' + title,
-                '- URL: ' + page.url(),
-                '',
-                '## Visible page text',
-                '~~~text',
-                visibleText,
-                '~~~',
-                '',
-                '## Page controls',
-                '~~~json',
-                JSON.stringify(controls, null, 2),
-                '~~~',
-                '',
-                '## Market data endpoint validation',
-                '~~~json',
-                JSON.stringify(bubbleStats, null, 2),
-                '~~~',
-                '',
-                '## XHR / Fetch requests',
-                '~~~json',
-                JSON.stringify(requests, null, 2),
-                '~~~',
-                '',
-                '## WebSocket connections',
-                '~~~json',
-                JSON.stringify(sockets, null, 2),
-                '~~~',
-                '',
-                '## JSON response samples',
-                '~~~json',
-                JSON.stringify(jsonResponses.slice(0, 12), null, 2),
-                '~~~'
-              ].join('\n');
+              report.canvases = await page.locator('canvas').evaluateAll(nodes => nodes.map((n,i) => {
+                const r=n.getBoundingClientRect();
+                return {i,width:n.width,height:n.height,rect:{x:r.x,y:r.y,width:r.width,height:r.height},visible:r.width>0&&r.height>0};
+              }));
 
-              require('fs').writeFileSync('inspection-summary.md', summary);
-              require('fs').appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary + '\n');
-              console.log('Inspection complete. Open the Summary tab.');
-              console.log('Bubble data stats:', JSON.stringify(bubbleStats));
-            } catch (e) {
-              console.log('INSPECTION_ERROR:', e.stack || String(e));
-              process.exitCode = 1;
-            } finally {
-              await browser.close();
-            }
+              report.svgs = await page.locator('svg').evaluateAll(nodes => nodes.slice(0,30).map((n,i) => {
+                const r=n.getBoundingClientRect();
+                return {i,rect:{x:r.x,y:r.y,width:r.width,height:r.height},text:(n.innerText||'').slice(0,300),class:n.getAttribute('class')};
+              }));
+
+              report.visibleElements = await page.locator('body *').evaluateAll(nodes => nodes.map(n => {
+                const r=n.getBoundingClientRect(), s=getComputedStyle(n);
+                if (!r.width || !r.height || r.bottom<=0 || r.right<=0 || r.top>=innerHeight || r.left>=innerWidth) return null;
+                const text=(n.innerText||n.getAttribute('aria-label')||n.getAttribute('title')||'').trim().replace(/\\s+/g,' ');
+                const cls=typeof n.className==='string'?n.className:(n.getAttribute('class')||'');
+                if (!text && !/bubble|coin|crypto|circle/i.test(cls+' '+n.tagName)) return null;
+                return {tag:n.tagName,cls:cls.slice(0,160),text:text.slice(0,180),aria:n.getAttribute('aria-label'),title:n.getAttribute('title'),data:[...n.attributes].filter(a=>a.name.startsWith('data-')).slice(0,12).map(a=>[a.name,a.value]),rect:{x:Math.round(r.x),y:Math.round(r.y),w:Math.round(r.width),h:Math.round(r.height)},display:s.display,visibility:s.visibility};
+              }).filter(Boolean).slice(0,250));
+
+              report.coinLikeLinks = await page.locator('a').evaluateAll(nodes => nodes.map(n => ({text:(n.innerText||'').trim(),href:n.href,aria:n.getAttribute('aria-label'),title:n.title})).filter(x => x.text || x.aria || x.title).slice(0,100));
+
+              const out='# Visible Crypto Bubbles inspection\\n\\n'+
+                '## Page / viewport\\n~~~json\\n'+JSON.stringify({title:report.title,viewport:report.viewport},null,2)+'\\n~~~\\n\\n'+
+                '## Canvas elements\\n~~~json\\n'+JSON.stringify(report.canvases,null,2)+'\\n~~~\\n\\n'+
+                '## SVG elements\\n~~~json\\n'+JSON.stringify(report.svgs,null,2)+'\\n~~~\\n\\n'+
+                '## Visible bubble/coin-like elements\\n~~~json\\n'+JSON.stringify(report.visibleElements,null,2)+'\\n~~~\\n\\n'+
+                '## Links\\n~~~json\\n'+JSON.stringify(report.coinLikeLinks,null,2)+'\\n~~~\\n\\n'+
+                '## Visible text\\n~~~text\\n'+report.bodyText+'\\n~~~\\n';
+              require('fs').writeFileSync('visible-bubbles-report.md',out);
+              require('fs').appendFileSync(process.env.GITHUB_STEP_SUMMARY,out);
+              console.log('Visible bubble inspection complete. Open Summary.');
+            } catch(e) { console.error(e.stack||String(e)); process.exitCode=1; }
+            finally { await browser.close(); }
           })();
           EOF
+          node visible.js
 
-          node inspect.js
-
-      - name: Save inspection report
+      - name: Upload visible bubble report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: cryptobubbles-inspection-report
-          path: inspection-summary.md
+          name: visible-bubbles-report
+          path: visible-bubbles-report.md
           if-no-files-found: ignore
