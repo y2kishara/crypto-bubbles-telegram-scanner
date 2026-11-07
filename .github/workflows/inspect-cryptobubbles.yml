@@ -6,7 +6,7 @@ on:
 jobs:
   inspect-visible-bubbles:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 10
     steps:
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -19,63 +19,126 @@ jobs:
           npm install playwright
           npx playwright install --with-deps chromium
 
-      - name: Inspect actual visible heatmap bubbles
+      - name: Capture actual 5m heatmap bubble labels
         run: |
           cat > visible.js <<'EOF'
           const { chromium } = require('playwright');
+          const fs = require('node:fs');
+
           (async () => {
             const browser = await chromium.launch({ headless: true });
-            const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
-            const report = {};
+            const page = await browser.newPage({
+              viewport: { width: 1440, height: 900 },
+              deviceScaleFactor: 1
+            });
+            const canvasText = [];
+
+            // Record text painted into 2D canvases; bubble labels may not exist in the DOM.
+            await page.addInitScript(() => {
+              const original = CanvasRenderingContext2D.prototype.fillText;
+              CanvasRenderingContext2D.prototype.fillText = function(text, x, y, ...rest) {
+                try {
+                  const canvas = this.canvas;
+                  const r = canvas.getBoundingClientRect();
+                  const item = {
+                    text: String(text),
+                    x: Math.round(Number(x) * (r.width / (canvas.width || 1)) + r.x),
+                    y: Math.round(Number(y) * (r.height / (canvas.height || 1)) + r.y),
+                    font: this.font,
+                    fillStyle: String(this.fillStyle),
+                    canvasWidth: canvas.width,
+                    canvasHeight: canvas.height
+                  };
+                  window.__bubbleCanvasText = window.__bubbleCanvasText || [];
+                  window.__bubbleCanvasText.push(item);
+                } catch (_) {}
+                return original.call(this, text, x, y, ...rest);
+              };
+            });
+
             try {
-              await page.goto('https://cryptobubbles.net/en', { waitUntil: 'domcontentloaded', timeout: 60000 });
+              await page.goto('https://cryptobubbles.net/en', {
+                waitUntil: 'domcontentloaded',
+                timeout: 60000
+              });
               await page.waitForTimeout(20000);
 
-              report.title = await page.title();
-              report.viewport = await page.evaluate(() => ({ width: innerWidth, height: innerHeight, dpr: devicePixelRatio }));
-              report.bodyText = (await page.locator('body').innerText()).slice(0, 3000);
+              const fiveM = page.getByText('5m', { exact: true }).filter({ visible: true });
+              const count = await fiveM.count();
+              if (!count) {
+                throw new Error('Could not find a visible 5m timeframe control. Page text: ' +
+                  (await page.locator('body').innerText()).slice(0, 2500));
+              }
+              await fiveM.first().click();
+              await page.waitForTimeout(10000);
 
-              report.canvases = await page.locator('canvas').evaluateAll(nodes => nodes.map((n,i) => {
-                const r=n.getBoundingClientRect();
-                return {i,width:n.width,height:n.height,rect:{x:r.x,y:r.y,width:r.width,height:r.height},visible:r.width>0&&r.height>0};
+              const report = await page.evaluate(() => ({
+                title: document.title,
+                viewport: { width: innerWidth, height: innerHeight, dpr: devicePixelRatio },
+                bodyText: (document.body.innerText || '').slice(0, 3000),
+                canvases: [...document.querySelectorAll('canvas')].map((c, i) => {
+                  const r = c.getBoundingClientRect();
+                  return {
+                    index: i, width: c.width, height: c.height,
+                    rect: { x: Math.round(r.x), y: Math.round(r.y),
+                      width: Math.round(r.width), height: Math.round(r.height) },
+                    visible: r.width > 0 && r.height > 0
+                  };
+                }),
+                canvasText: window.__bubbleCanvasText || []
               }));
 
-              report.svgs = await page.locator('svg').evaluateAll(nodes => nodes.slice(0,30).map((n,i) => {
-                const r=n.getBoundingClientRect();
-                return {i,rect:{x:r.x,y:r.y,width:r.width,height:r.height},text:(n.innerText||'').slice(0,300),class:n.getAttribute('class')};
-              }));
+              // Save the rendered page and each visible canvas for direct visual verification.
+              await page.screenshot({ path: 'heatmap-page.png', fullPage: false });
+              const canvases = page.locator('canvas');
+              for (let i = 0; i < await canvases.count(); i++) {
+                const c = canvases.nth(i);
+                const b = await c.boundingBox();
+                if (b && b.width > 0 && b.height > 0) {
+                  await c.screenshot({ path: `heatmap-canvas-${i}.png` }).catch(() => {});
+                }
+              }
 
-              report.visibleElements = await page.locator('body *').evaluateAll(nodes => nodes.map(n => {
-                const r=n.getBoundingClientRect(), s=getComputedStyle(n);
-                if (!r.width || !r.height || r.bottom<=0 || r.right<=0 || r.top>=innerHeight || r.left>=innerWidth) return null;
-                const text=(n.innerText||n.getAttribute('aria-label')||n.getAttribute('title')||'').trim().replace(/\\s+/g,' ');
-                const cls=typeof n.className==='string'?n.className:(n.getAttribute('class')||'');
-                if (!text && !/bubble|coin|crypto|circle/i.test(cls+' '+n.tagName)) return null;
-                return {tag:n.tagName,cls:cls.slice(0,160),text:text.slice(0,180),aria:n.getAttribute('aria-label'),title:n.getAttribute('title'),data:[...n.attributes].filter(a=>a.name.startsWith('data-')).slice(0,12).map(a=>[a.name,a.value]),rect:{x:Math.round(r.x),y:Math.round(r.y),w:Math.round(r.width),h:Math.round(r.height)},display:s.display,visibility:s.visibility};
-              }).filter(Boolean).slice(0,250));
-
-              report.coinLikeLinks = await page.locator('a').evaluateAll(nodes => nodes.map(n => ({text:(n.innerText||'').trim(),href:n.href,aria:n.getAttribute('aria-label'),title:n.title})).filter(x => x.text || x.aria || x.title).slice(0,100));
-
-              const out='# Visible Crypto Bubbles inspection\\n\\n'+
-                '## Page / viewport\\n~~~json\\n'+JSON.stringify({title:report.title,viewport:report.viewport},null,2)+'\\n~~~\\n\\n'+
-                '## Canvas elements\\n~~~json\\n'+JSON.stringify(report.canvases,null,2)+'\\n~~~\\n\\n'+
-                '## SVG elements\\n~~~json\\n'+JSON.stringify(report.svgs,null,2)+'\\n~~~\\n\\n'+
-                '## Visible bubble/coin-like elements\\n~~~json\\n'+JSON.stringify(report.visibleElements,null,2)+'\\n~~~\\n\\n'+
-                '## Links\\n~~~json\\n'+JSON.stringify(report.coinLikeLinks,null,2)+'\\n~~~\\n\\n'+
-                '## Visible text\\n~~~text\\n'+report.bodyText+'\\n~~~\\n';
-              require('fs').writeFileSync('visible-bubbles-report.md',out);
-              require('fs').appendFileSync(process.env.GITHUB_STEP_SUMMARY,out);
-              console.log('Visible bubble inspection complete. Open Summary.');
-            } catch(e) { console.error(e.stack||String(e)); process.exitCode=1; }
-            finally { await browser.close(); }
+              fs.writeFileSync('visible-bubbles-report.json', JSON.stringify(report, null, 2));
+              const summary = [
+                '# 5m Visible Crypto Bubbles inspection',
+                '',
+                '## Page and viewport',
+                '```json',
+                JSON.stringify({ title: report.title, viewport: report.viewport, canvases: report.canvases }, null, 2),
+                '```',
+                '',
+                '## Visible page text',
+                '```text',
+                report.bodyText,
+                '```',
+                '',
+                '## Text drawn into canvas (candidate bubble labels)',
+                '```json',
+                JSON.stringify(report.canvasText, null, 2),
+                '```'
+              ].join('\n');
+              fs.writeFileSync('visible-bubbles-report.md', summary);
+              fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary);
+              console.log('5m heatmap capture complete. Canvas text calls:', report.canvasText.length);
+            } catch (error) {
+              console.error(error.stack || String(error));
+              process.exitCode = 1;
+            } finally {
+              await browser.close();
+            }
           })();
           EOF
           node visible.js
 
-      - name: Upload visible bubble report
+      - name: Upload heatmap inspection evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: visible-bubbles-report
-          path: visible-bubbles-report.md
+          name: visible-bubbles-5m-inspection
+          path: |
+            visible-bubbles-report.json
+            visible-bubbles-report.md
+            heatmap-page.png
+            heatmap-canvas-*.png
           if-no-files-found: ignore
