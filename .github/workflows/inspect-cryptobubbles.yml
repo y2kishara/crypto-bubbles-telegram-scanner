@@ -29,15 +29,30 @@ jobs:
             const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
             const requests = [];
             const jsonResponses = [];
+            const sockets = [];
+            const socketFrames = [];
 
             page.on('request', request => {
               if (['xhr', 'fetch'].includes(request.resourceType())) {
                 requests.push({
                   method: request.method(),
                   type: request.resourceType(),
-                  url: request.url().slice(0, 500)
+                  url: request.url().slice(0, 400)
                 });
               }
+            });
+
+            page.on('websocket', ws => {
+              sockets.push(ws.url().slice(0, 400));
+              ws.on('framereceived', event => {
+                const payload = typeof event.payload === 'string'
+                  ? event.payload
+                  : '[binary frame]';
+                socketFrames.push({
+                  url: ws.url().slice(0, 250),
+                  sample: payload.slice(0, 1000)
+                });
+              });
             });
 
             page.on('response', async response => {
@@ -47,12 +62,10 @@ jobs:
                   const body = await response.text();
                   jsonResponses.push({
                     status: response.status(),
-                    url: response.url().slice(0, 500),
-                    sample: body.slice(0, 1800)
+                    url: response.url().slice(0, 400),
+                    sample: body.slice(0, 1200)
                   });
-                } catch (e) {
-                  jsonResponses.push({ url: response.url(), error: String(e) });
-                }
+                } catch (e) {}
               }
             });
 
@@ -63,11 +76,8 @@ jobs:
               });
               await page.waitForTimeout(18000);
 
-              console.log('=== PAGE ===');
-              console.log('PAGE_TITLE:', await page.title());
-              console.log('PAGE_URL:', page.url());
-              console.log('VISIBLE_TEXT:', (await page.locator('body').innerText()).slice(0, 3500));
-
+              const title = await page.title();
+              const visibleText = (await page.locator('body').innerText()).slice(0, 2500);
               const controls = await page.locator('button, [role="button"], select, option')
                 .evaluateAll(nodes => nodes.map(n => ({
                   tag: n.tagName,
@@ -76,12 +86,51 @@ jobs:
                   title: n.getAttribute('title')
                 })).filter(x => x.text || x.aria || x.title).slice(0, 100));
 
-              console.log('=== TIMEFRAME / PAGE CONTROLS ===');
-              console.log(JSON.stringify(controls, null, 2));
-              console.log('=== XHR / FETCH REQUESTS ===');
-              console.log(JSON.stringify(requests, null, 2));
-              console.log('=== JSON RESPONSES ONLY ===');
-              console.log(JSON.stringify(jsonResponses, null, 2));
+              const summary = [
+                '# Crypto Bubbles inspection results',
+                '',
+                '## Page',
+                '- Title: ' + title,
+                '- URL: ' + page.url(),
+                '',
+                '## Visible page text (first 2,500 characters)',
+                '~~~text',
+                visibleText,
+                '~~~',
+                '',
+                '## Timeframe / page controls',
+                '~~~json',
+                JSON.stringify(controls, null, 2),
+                '~~~',
+                '',
+                '## XHR / Fetch requests',
+                '~~~json',
+                JSON.stringify(requests, null, 2),
+                '~~~',
+                '',
+                '## WebSocket connections',
+                '~~~json',
+                JSON.stringify(sockets, null, 2),
+                '~~~',
+                '',
+                '## WebSocket received message samples',
+                '~~~json',
+                JSON.stringify(socketFrames.slice(0, 20), null, 2),
+                '~~~',
+                '',
+                '## JSON responses',
+                '~~~json',
+                JSON.stringify(jsonResponses.slice(0, 20), null, 2),
+                '~~~'
+              ].join('\n');
+
+              require('fs').writeFileSync('inspection-summary.md', summary);
+              require('fs').appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary + '\n');
+              console.log('Inspection completed. Open the job Summary tab for readable results.');
+              console.log('XHR/FETCH count:', requests.length);
+              console.log('WebSocket count:', sockets.length);
+              console.log('WebSocket frame count:', socketFrames.length);
+              console.log('JSON response count:', jsonResponses.length);
             } catch (e) {
               console.log('INSPECTION_ERROR:', e.stack || String(e));
               process.exitCode = 1;
@@ -92,3 +141,11 @@ jobs:
           EOF
 
           node inspect.js
+
+      - name: Save inspection report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cryptobubbles-inspection-report
+          path: inspection-summary.md
+          if-no-files-found: ignore
