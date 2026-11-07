@@ -1,1 +1,4726 @@
-{}
+{
+  "4": {
+    "min5": -0.05,
+    "risingStreak": 0
+  },
+  "BTC": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "ETH": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "USDT": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "BNB": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "XRP": {
+    "min5": 0.16,
+    "risingStreak": 0
+  },
+  "USDC": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SOL": {
+    "min5": 0.09,
+    "risingStreak": 0
+  },
+  "TRX": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "ZEC": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "HYPE": {
+    "min5": 0.2,
+    "risingStreak": 0
+  },
+  "XMR": {
+    "min5": -0.1,
+    "risingStreak": 0
+  },
+  "DOGE": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "WBT": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "LEO": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "LINK": {
+    "min5": 0.26,
+    "risingStreak": 0
+  },
+  "ADA": {
+    "min5": 0.17,
+    "risingStreak": 0
+  },
+  "XLM": {
+    "min5": 0.07,
+    "risingStreak": 0
+  },
+  "BCH": {
+    "min5": 0.22,
+    "risingStreak": 0
+  },
+  "NEAR": {
+    "min5": 0.33,
+    "risingStreak": 0
+  },
+  "USDE": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "DAI": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "UNI": {
+    "min5": 0.34,
+    "risingStreak": 0
+  },
+  "LTC": {
+    "min5": 0.15,
+    "risingStreak": 0
+  },
+  "RAIN": {
+    "min5": 0.14,
+    "risingStreak": 0
+  },
+  "CC": {
+    "min5": 0.38,
+    "risingStreak": 0
+  },
+  "AVAX": {
+    "min5": 0.23,
+    "risingStreak": 0
+  },
+  "SUI": {
+    "min5": 0.24,
+    "risingStreak": 0
+  },
+  "USD1": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "XAUT": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "TON": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "HBAR": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "QNT": {
+    "min5": 0.09,
+    "risingStreak": 0
+  },
+  "PYUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "USDG": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "RLUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SHIB": {
+    "min5": 0.07,
+    "risingStreak": 0
+  },
+  "TAO": {
+    "min5": 0.13,
+    "risingStreak": 0
+  },
+  "CRO": {
+    "min5": -0.04,
+    "risingStreak": 0
+  },
+  "USDY": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "OKB": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "ENA": {
+    "min5": 0.41,
+    "risingStreak": 0
+  },
+  "USYC": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "PEPE": {
+    "min5": 0.42,
+    "risingStreak": 0
+  },
+  "AAVE": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "EURSAFO": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "M": {
+    "min5": -0.1,
+    "risingStreak": 0
+  },
+  "USDF": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "PAXG": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ONDO": {
+    "min5": 0.12,
+    "risingStreak": 0
+  },
+  "ASTER": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "PUMP": {
+    "min5": 0.41,
+    "risingStreak": 0
+  },
+  "BTW": {
+    "min5": 0.41,
+    "risingStreak": 0
+  },
+  "U": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "DOT": {
+    "min5": 0.1,
+    "risingStreak": 0
+  },
+  "USDD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "MNT": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SKY": {
+    "min5": 0.07,
+    "risingStreak": 0
+  },
+  "MORPHO": {
+    "min5": 0.07,
+    "risingStreak": 0
+  },
+  "WLFI": {
+    "min5": -0.16,
+    "risingStreak": 0
+  },
+  "HTX": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "ICP": {
+    "min5": 0.07,
+    "risingStreak": 0
+  },
+  "BFUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "WLD": {
+    "min5": 0.33,
+    "risingStreak": 0
+  },
+  "MKR": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "BGB": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ARB": {
+    "min5": 0.37,
+    "risingStreak": 0
+  },
+  "JST": {
+    "min5": 0.09,
+    "risingStreak": 0
+  },
+  "USDGO": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ETC": {
+    "min5": 0.12,
+    "risingStreak": 0
+  },
+  "VVV": {
+    "min5": 0.18,
+    "risingStreak": 0
+  },
+  "GT": {
+    "min5": 0.13,
+    "risingStreak": 0
+  },
+  "KCS": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "POL": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "BCAP": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "OUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ALGO": {
+    "min5": 0.26,
+    "risingStreak": 0
+  },
+  "PI": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "RENDER": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "KAS": {
+    "min5": 0.09,
+    "risingStreak": 0
+  },
+  "INJ": {
+    "min5": 0.4,
+    "risingStreak": 0
+  },
+  "LIT": {
+    "min5": 0.84,
+    "risingStreak": 0
+  },
+  "JUP": {
+    "min5": 0.32,
+    "risingStreak": 0
+  },
+  "JLP": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ATOM": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "NEXO": {
+    "min5": 0.21,
+    "risingStreak": 0
+  },
+  "GHO": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "FIL": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "NIGHT": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "ZRO": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "USTB": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "STX": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "CAKE": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "XDC": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "DASH": {
+    "min5": 0.17,
+    "risingStreak": 0
+  },
+  "ETHFI": {
+    "min5": 0.1,
+    "risingStreak": 0
+  },
+  "JAAA": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "BDX": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "USD0": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "APT": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "EURC": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "PYTH": {
+    "min5": 0.22,
+    "risingStreak": 0
+  },
+  "FLR": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "TUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "EUTBL": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "RAY": {
+    "min5": 0.35,
+    "risingStreak": 0
+  },
+  "A7A5": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "YLDS": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "STABLE": {
+    "min5": 0.07,
+    "risingStreak": 0
+  },
+  "VET": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "TIA": {
+    "min5": 0.35,
+    "risingStreak": 0
+  },
+  "CRV": {
+    "min5": 0.51,
+    "risingStreak": 0
+  },
+  "USDTB": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "PENGU": {
+    "min5": 0.2,
+    "risingStreak": 0
+  },
+  "PIEVERSE": {
+    "min5": -0.04,
+    "risingStreak": 0
+  },
+  "REUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "VIRTUAL": {
+    "min5": 0.1,
+    "risingStreak": 0
+  },
+  "KAU": {
+    "min5": -0.05,
+    "risingStreak": 0
+  },
+  "GRASS": {
+    "min5": 0.32,
+    "risingStreak": 0
+  },
+  "HASH": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "BTT": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "BSV": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SPX": {
+    "min5": 0.2,
+    "risingStreak": 0
+  },
+  "FET": {
+    "min5": 0.28,
+    "risingStreak": 0
+  },
+  "DRV": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "TRUMP": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "OUSG": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SOFID": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "STRK": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "SEI": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "FF": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "TIBBIR": {
+    "min5": 0.14,
+    "risingStreak": 0
+  },
+  "GNO": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "SUN": {
+    "min5": -0.06,
+    "risingStreak": 0
+  },
+  "APXUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "XTZ": {
+    "min5": 0.47,
+    "risingStreak": 0
+  },
+  "PENDLE": {
+    "min5": 0.24,
+    "risingStreak": 0
+  },
+  "BUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "FDUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "XPL": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "UB": {
+    "min5": 0.09,
+    "risingStreak": 0
+  },
+  "LDO": {
+    "min5": 0.15,
+    "risingStreak": 0
+  },
+  "KITE": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "APEPE": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "BONK": {
+    "min5": 0.2,
+    "risingStreak": 0
+  },
+  "SAFO": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "OP": {
+    "min5": 0.23,
+    "risingStreak": 0
+  },
+  "BP": {
+    "min5": -0.15,
+    "risingStreak": 0
+  },
+  "PC0000031": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "DCR": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "CFX": {
+    "min5": 0.24,
+    "risingStreak": 0
+  },
+  "LUNC": {
+    "min5": 0.14,
+    "risingStreak": 0
+  },
+  "KAIA": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "GRT": {
+    "min5": 0.12,
+    "risingStreak": 0
+  },
+  "AR": {
+    "min5": -0.12,
+    "risingStreak": 0
+  },
+  "SPCXB": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "BEAM": {
+    "min5": 0.1,
+    "risingStreak": 0
+  },
+  "FLOKI": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "CARDS": {
+    "min5": 0.34,
+    "risingStreak": 0
+  },
+  "COMP": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "KMNO": {
+    "min5": -0.04,
+    "risingStreak": 0
+  },
+  "NFT": {
+    "min5": -0.07,
+    "risingStreak": 0
+  },
+  "USX": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "RUNE": {
+    "min5": -0.35,
+    "risingStreak": 0
+  },
+  "MON": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ENS": {
+    "min5": 0.18,
+    "risingStreak": 0
+  },
+  "EURCV": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "AKT": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "FLUID": {
+    "min5": 1.05,
+    "risingStreak": 0
+  },
+  "KAG": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SHFL": {
+    "min5": 0.15,
+    "risingStreak": 0
+  },
+  "ZBCN": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "BAT": {
+    "min5": 0.2,
+    "risingStreak": 0
+  },
+  "AERO": {
+    "min5": 0.15,
+    "risingStreak": 0
+  },
+  "GEOD": {
+    "min5": -0.37,
+    "risingStreak": 0
+  },
+  "JTO": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "SBTC": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "JASMY": {
+    "min5": -0.25,
+    "risingStreak": 0
+  },
+  "USAT": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ZAMA": {
+    "min5": 0.15,
+    "risingStreak": 0
+  },
+  "PUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "USTBL": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "MET": {
+    "min5": 0.54,
+    "risingStreak": 0
+  },
+  "EIGEN": {
+    "min5": 0.3,
+    "risingStreak": 0
+  },
+  "IOTA": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "ANVL": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "CVX": {
+    "min5": 0.12,
+    "risingStreak": 0
+  },
+  "TWT": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "SYRUP": {
+    "min5": 0.31,
+    "risingStreak": 0
+  },
+  "PC0000033": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "TEL": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "WIF": {
+    "min5": 0.23,
+    "risingStreak": 0
+  },
+  "CAP": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "AUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "GOMINING": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "KNTQ": {
+    "min5": -0.09,
+    "risingStreak": 0
+  },
+  "TRAC": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "CRVUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "S": {
+    "min5": 0.21,
+    "risingStreak": 0
+  },
+  "GUSD": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "CRCLB": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "BORG": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "AXS": {
+    "min5": 0.17,
+    "risingStreak": 0
+  },
+  "THETA": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "Q": {
+    "min5": 0.55,
+    "risingStreak": 0
+  },
+  "SN51": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "MANA": {
+    "min5": 0.21,
+    "risingStreak": 0
+  },
+  "XCN": {
+    "min5": -0.04,
+    "risingStreak": 0
+  },
+  "AKE": {
+    "min5": -1.15,
+    "risingStreak": 0
+  },
+  "A": {
+    "min5": 0.12,
+    "risingStreak": 0
+  },
+  "PC0000097": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "MX": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "BR": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "NEO": {
+    "min5": 0.24,
+    "risingStreak": 0
+  },
+  "CASH": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SENT": {
+    "min5": -0.11,
+    "risingStreak": 0
+  },
+  "VSN": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "USELESS": {
+    "min5": 0.39,
+    "risingStreak": 0
+  },
+  "JPYSC": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "MSTRX": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "PONS": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "OZO": {
+    "min5": -0.17,
+    "risingStreak": 0
+  },
+  "SAND": {
+    "min5": 0.13,
+    "risingStreak": 0
+  },
+  "AWE": {
+    "min5": -0.11,
+    "risingStreak": 0
+  },
+  "NPC": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "HEX": {
+    "min5": 0.16,
+    "risingStreak": 0
+  },
+  "CHZ": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "B": {
+    "min5": 0.17,
+    "risingStreak": 0
+  },
+  "XEC": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "THBILL": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "CRCLX": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "FARTCOIN": {
+    "min5": 0.23,
+    "risingStreak": 0
+  },
+  "HBD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "GOOGLB": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "PC0000023": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ALFW": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "XAUT0": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "AIOZ": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "RLB": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "2Z": {
+    "min5": 0.18,
+    "risingStreak": 0
+  },
+  "DGAI": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "PC0000085": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "1INCH": {
+    "min5": 0.17,
+    "risingStreak": 0
+  },
+  "H": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "AVUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "IMX": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "SUPER": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "APE": {
+    "min5": 0.1,
+    "risingStreak": 0
+  },
+  "SOSO": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "SFP": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "PC0000015": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "USDAT": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "GLM": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "STAC": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ULTIMA": {
+    "min5": -0.13,
+    "risingStreak": 0
+  },
+  "ZK": {
+    "min5": 0.1,
+    "risingStreak": 0
+  },
+  "ATH": {
+    "min5": 0.29,
+    "risingStreak": 0
+  },
+  "PC0000077": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "UUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "RSR": {
+    "min5": 0.33,
+    "risingStreak": 0
+  },
+  "GENIUS": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "PROM": {
+    "min5": -0.04,
+    "risingStreak": 0
+  },
+  "EGLD": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "SNX": {
+    "min5": 0.18,
+    "risingStreak": 0
+  },
+  "SN64": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "FRXUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "USDA": {
+    "min5": 0.45,
+    "risingStreak": 0
+  },
+  "ZEN": {
+    "min5": 0.07,
+    "risingStreak": 0
+  },
+  "SKR": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "SNDKB": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "PLUME": {
+    "min5": 0.35,
+    "risingStreak": 0
+  },
+  "0G": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "CASHCAT": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "PLS": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SOON": {
+    "min5": -0.51,
+    "risingStreak": 0
+  },
+  "YZY": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "DBR": {
+    "min5": 0.21,
+    "risingStreak": 0
+  },
+  "RED": {
+    "min5": 0.07,
+    "risingStreak": 0
+  },
+  "GMX": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "SHX": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "ICNT": {
+    "min5": 2.42,
+    "risingStreak": 0
+  },
+  "ORCA": {
+    "min5": 0.12,
+    "risingStreak": 0
+  },
+  "GGBR": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "MAG7SSI": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "SPCXX": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "JPYC": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "DOG": {
+    "min5": 0.22,
+    "risingStreak": 0
+  },
+  "PLSX": {
+    "min5": 0.5,
+    "risingStreak": 0
+  },
+  "DYDX": {
+    "min5": 0.16,
+    "risingStreak": 0
+  },
+  "PC0000019": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "PGOLD": {
+    "min5": -0.15,
+    "risingStreak": 0
+  },
+  "GALA": {
+    "min5": 0.16,
+    "risingStreak": 0
+  },
+  "CRCLON": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ZRX": {
+    "min5": 0.14,
+    "risingStreak": 0
+  },
+  "CHEEMS": {
+    "min5": 0.28,
+    "risingStreak": 0
+  },
+  "PEAQ": {
+    "min5": -0.31,
+    "risingStreak": 0
+  },
+  "WAL": {
+    "min5": -0.08,
+    "risingStreak": 0
+  },
+  "QTUM": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "PC0000101": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "QRL": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "VEREM": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "STONK": {
+    "min5": 0.12,
+    "risingStreak": 0
+  },
+  "CGUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ADI": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "FORM": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "FEUSD": {
+    "min5": 0.09,
+    "risingStreak": 0
+  },
+  "FTT": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "W": {
+    "min5": 0.33,
+    "risingStreak": 0
+  },
+  "LISUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "TRUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "USDSUI": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "KAVA": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ARKM": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "SPYX": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "TAG": {
+    "min5": -0.07,
+    "risingStreak": 0
+  },
+  "MTBILL": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "YFI": {
+    "min5": 0.14,
+    "risingStreak": 0
+  },
+  "GAS": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "PROS": {
+    "min5": -0.11,
+    "risingStreak": 0
+  },
+  "PC0000049": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "XAUM": {
+    "min5": -0.06,
+    "risingStreak": 0
+  },
+  "CHIP": {
+    "min5": 0.07,
+    "risingStreak": 0
+  },
+  "QQQX": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "DOLA": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "MUB": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "INTCB": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "MINA": {
+    "min5": 0.25,
+    "risingStreak": 0
+  },
+  "ZANO": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "USDX": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "USDON": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "NMR": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ORDI": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "SAFE": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "O": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "LPT": {
+    "min5": 0.18,
+    "risingStreak": 0
+  },
+  "ORE": {
+    "min5": 0.2,
+    "risingStreak": 0
+  },
+  "TSLAX": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "BRLV": {
+    "min5": 0.17,
+    "risingStreak": 0
+  },
+  "GOOGLX": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "CUSD": {
+    "min5": 0.18,
+    "risingStreak": 0
+  },
+  "OMI": {
+    "min5": -0.05,
+    "risingStreak": 0
+  },
+  "FXUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "AP3X": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ALLO": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "IDOL": {
+    "min5": 2.47,
+    "risingStreak": 0
+  },
+  "HOT": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "VELO": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "WEMIX": {
+    "min5": 0.07,
+    "risingStreak": 0
+  },
+  "AIOT": {
+    "min5": 0.47,
+    "risingStreak": 0
+  },
+  "KSM": {
+    "min5": 0.13,
+    "risingStreak": 0
+  },
+  "DIEM": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "REUR": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "COW": {
+    "min5": 0.07,
+    "risingStreak": 0
+  },
+  "ZETA": {
+    "min5": 0.12,
+    "risingStreak": 0
+  },
+  "MOOLAH": {
+    "min5": -0.05,
+    "risingStreak": 0
+  },
+  "MELANIA": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "PURR": {
+    "min5": -0.19,
+    "risingStreak": 0
+  },
+  "PC0000027": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "RIF": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "DGB": {
+    "min5": 0.35,
+    "risingStreak": 0
+  },
+  "SOXLB": {
+    "min5": -0.07,
+    "risingStreak": 0
+  },
+  "BANANAS31": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "WIN": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "PC0000081": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "GBPSAFO": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "AMP": {
+    "min5": 0.25,
+    "risingStreak": 0
+  },
+  "IVVON": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "HNT": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "BABY": {
+    "min5": 0.16,
+    "risingStreak": 0
+  },
+  "CROSS": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "TFUEL": {
+    "min5": 0.13,
+    "risingStreak": 0
+  },
+  "BABYDOGE": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "MCAT": {
+    "min5": 0.2,
+    "risingStreak": 0
+  },
+  "QUBIC": {
+    "min5": -0.26,
+    "risingStreak": 0
+  },
+  "VTHO": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "ZIG": {
+    "min5": -0.05,
+    "risingStreak": 0
+  },
+  "FT": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SPK": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "MEGA": {
+    "min5": 0.17,
+    "risingStreak": 0
+  },
+  "ESP": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "LINEA": {
+    "min5": 0.13,
+    "risingStreak": 0
+  },
+  "ACU": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "NUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "STRCON": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "ALEO": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "MAGMA": {
+    "min5": -0.05,
+    "risingStreak": 0
+  },
+  "KAITO": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "NVDAX": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "CKB": {
+    "min5": 0.07,
+    "risingStreak": 0
+  },
+  "T": {
+    "min5": -0.13,
+    "risingStreak": 0
+  },
+  "SUSHI": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "AB": {
+    "min5": -0.05,
+    "risingStreak": 0
+  },
+  "RNT": {
+    "min5": -0.05,
+    "risingStreak": 0
+  },
+  "IO": {
+    "min5": 0.24,
+    "risingStreak": 0
+  },
+  "EHEX": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "BRSRV": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "PMUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ELF": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "AUSDT": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "USDKG": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "TURBO": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "NVDAB": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "METAL": {
+    "min5": -0.05,
+    "risingStreak": 0
+  },
+  "XPR": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "GPS": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "UMXM": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "SHARE": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "NXPC": {
+    "min5": 0.39,
+    "risingStreak": 0
+  },
+  "FIUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "BRZ": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "TPT": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "RE": {
+    "min5": 0.21,
+    "risingStreak": 0
+  },
+  "FIDD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "JTRSY": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "XVS": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "ENJ": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "ARX": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "ASTR": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "ROSE": {
+    "min5": 0.18,
+    "risingStreak": 0
+  },
+  "BRLA": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "FOLKS": {
+    "min5": 0.2,
+    "risingStreak": 0
+  },
+  "AXL": {
+    "min5": 0.21,
+    "risingStreak": 0
+  },
+  "HOLO": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "NOS": {
+    "min5": 0.33,
+    "risingStreak": 0
+  },
+  "BAN": {
+    "min5": 0.18,
+    "risingStreak": 0
+  },
+  "SPYON": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "DEXE": {
+    "min5": 0.07,
+    "risingStreak": 0
+  },
+  "CTC": {
+    "min5": -0.04,
+    "risingStreak": 0
+  },
+  "NES": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "MARSCOIN": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "DUSK": {
+    "min5": -0.09,
+    "risingStreak": 0
+  },
+  "TRB": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "RITUAL": {
+    "min5": 1.26,
+    "risingStreak": 0
+  },
+  "JUPUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "BARD": {
+    "min5": 0.29,
+    "risingStreak": 0
+  },
+  "ID": {
+    "min5": 0.29,
+    "risingStreak": 0
+  },
+  "AIAT": {
+    "min5": -0.48,
+    "risingStreak": 0
+  },
+  "XNO": {
+    "min5": -0.2,
+    "risingStreak": 0
+  },
+  "BIO": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "COAI": {
+    "min5": -0.07,
+    "risingStreak": 0
+  },
+  "BOME": {
+    "min5": -0.08,
+    "risingStreak": 0
+  },
+  "ONT": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "ZCHF": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "MSUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SXT": {
+    "min5": -0.31,
+    "risingStreak": 0
+  },
+  "WXT": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "MERL": {
+    "min5": -0.08,
+    "risingStreak": 0
+  },
+  "MUBARAK": {
+    "min5": 0.17,
+    "risingStreak": 0
+  },
+  "JELLYJELLY": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "BERA": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "CELO": {
+    "min5": 0.34,
+    "risingStreak": 0
+  },
+  "XYO": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "IP": {
+    "min5": 0.12,
+    "risingStreak": 0
+  },
+  "POLYX": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "TOSHI": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "EDU": {
+    "min5": -0.13,
+    "risingStreak": 0
+  },
+  "ALT": {
+    "min5": 0.15,
+    "risingStreak": 0
+  },
+  "XUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "AZTEC": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "YZUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "CHFAU": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "POD": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "XDAI": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "LSK": {
+    "min5": 0.15,
+    "risingStreak": 0
+  },
+  "DOS": {
+    "min5": -0.1,
+    "risingStreak": 0
+  },
+  "ANKR": {
+    "min5": 0.18,
+    "risingStreak": 0
+  },
+  "ABEY": {
+    "min5": 0.17,
+    "risingStreak": 0
+  },
+  "REQ": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "GOHOME": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "BEAT": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "BRETT": {
+    "min5": 0.09,
+    "risingStreak": 0
+  },
+  "DEGEN": {
+    "min5": 1.09,
+    "risingStreak": 0
+  },
+  "VENOM": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "API3": {
+    "min5": 0.17,
+    "risingStreak": 0
+  },
+  "IRYS": {
+    "min5": 0.1,
+    "risingStreak": 0
+  },
+  "BOLD": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "USN": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "RLC": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "MASK": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "LCX": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "MBG": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "CCD": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "BAS": {
+    "min5": -0.04,
+    "risingStreak": 0
+  },
+  "GWEI": {
+    "min5": 0.49,
+    "risingStreak": 0
+  },
+  "PC0000089": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "NEX": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "REZ": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "RAVE": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "KUB": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "PATHUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "CFG": {
+    "min5": 0.44,
+    "risingStreak": 0
+  },
+  "CSPR": {
+    "min5": -1.53,
+    "risingStreak": 0
+  },
+  "DEEP": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "SNEK": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "RON": {
+    "min5": -0.22,
+    "risingStreak": 0
+  },
+  "MUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ARRR": {
+    "min5": 0.1,
+    "risingStreak": 0
+  },
+  "EURI": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "MOG": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "POPCAT": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "LAB": {
+    "min5": -0.37,
+    "risingStreak": 0
+  },
+  "FLOW": {
+    "min5": 0.14,
+    "risingStreak": 0
+  },
+  "TRUTH": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "PNUT": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "PCI": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "PROVE": {
+    "min5": 0.21,
+    "risingStreak": 0
+  },
+  "YUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ARC": {
+    "min5": 0.33,
+    "risingStreak": 0
+  },
+  "MPLX": {
+    "min5": -0.2,
+    "risingStreak": 0
+  },
+  "XVG": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "SC": {
+    "min5": -0.09,
+    "risingStreak": 0
+  },
+  "BAND": {
+    "min5": 0.13,
+    "risingStreak": 0
+  },
+  "VVS": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ORBIO": {
+    "min5": 0.4,
+    "risingStreak": 0
+  },
+  "ACX": {
+    "min5": -0.18,
+    "risingStreak": 0
+  },
+  "LION": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ZIL": {
+    "min5": -0.06,
+    "risingStreak": 0
+  },
+  "NIL": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "KTA": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "NAT": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "QQQON": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "ALCH": {
+    "min5": -0.61,
+    "risingStreak": 0
+  },
+  "SSV": {
+    "min5": 0.35,
+    "risingStreak": 0
+  },
+  "AVNT": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "NOT": {
+    "min5": 0.12,
+    "risingStreak": 0
+  },
+  "RIVER": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "AURORA": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "COINDEPO": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "MOCA": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "SRX": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "ONG": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "LISTA": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "MOODENG": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "SYN": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "NOCK": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "OCEAN": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "MEW": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "RPL": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "XPIN": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "LOBO": {
+    "min5": -2.01,
+    "risingStreak": 0
+  },
+  "BFC": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "REAL": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "PHA": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "ONE": {
+    "min5": 1.01,
+    "risingStreak": 0
+  },
+  "ARK": {
+    "min5": -0.06,
+    "risingStreak": 0
+  },
+  "POWR": {
+    "min5": -0.33,
+    "risingStreak": 0
+  },
+  "SNT": {
+    "min5": 0.09,
+    "risingStreak": 0
+  },
+  "FB": {
+    "min5": -0.36,
+    "risingStreak": 0
+  },
+  "JCT": {
+    "min5": 0.75,
+    "risingStreak": 0
+  },
+  "PEOPLE": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "USDU": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ORBS": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "APEX": {
+    "min5": 0.07,
+    "risingStreak": 0
+  },
+  "ASSET": {
+    "min5": -0.17,
+    "risingStreak": 0
+  },
+  "DEP": {
+    "min5": -0.09,
+    "risingStreak": 0
+  },
+  "UAI": {
+    "min5": 0.22,
+    "risingStreak": 0
+  },
+  "KII": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SKYAI": {
+    "min5": 0.12,
+    "risingStreak": 0
+  },
+  "OPEN": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "ME": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "PRO": {
+    "min5": 0.13,
+    "risingStreak": 0
+  },
+  "HSK": {
+    "min5": 0.1,
+    "risingStreak": 0
+  },
+  "ANTFUN": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "UMA": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "FLIP": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "MAGIC": {
+    "min5": -0.09,
+    "risingStreak": 0
+  },
+  "GIGGLE": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "AIN": {
+    "min5": 1.34,
+    "risingStreak": 0
+  },
+  "IOTX": {
+    "min5": -0.17,
+    "risingStreak": 0
+  },
+  "CENT": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "OPG": {
+    "min5": 0.09,
+    "risingStreak": 0
+  },
+  "EURE": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "TORN": {
+    "min5": -0.28,
+    "risingStreak": 0
+  },
+  "SAHARA": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "VR": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "INIT": {
+    "min5": -0.12,
+    "risingStreak": 0
+  },
+  "NEET": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "COTI": {
+    "min5": 0.17,
+    "risingStreak": 0
+  },
+  "ARIA": {
+    "min5": 0.18,
+    "risingStreak": 0
+  },
+  "HIMSON": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "XP": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "TAKE": {
+    "min5": 0.24,
+    "risingStreak": 0
+  },
+  "WKC": {
+    "min5": -0.26,
+    "risingStreak": 0
+  },
+  "B3": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "UQC": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "MOVE": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "TROLL": {
+    "min5": -0.1,
+    "risingStreak": 0
+  },
+  "BNT": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "MUON": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "XT": {
+    "min5": 0.07,
+    "risingStreak": 0
+  },
+  "STEEM": {
+    "min5": -0.06,
+    "risingStreak": 0
+  },
+  "BNKR": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "SOMI": {
+    "min5": 0.45,
+    "risingStreak": 0
+  },
+  "NVDAON": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "LUNA": {
+    "min5": 0.17,
+    "risingStreak": 0
+  },
+  "TGBP": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "BIRB": {
+    "min5": -0.26,
+    "risingStreak": 0
+  },
+  "CATI": {
+    "min5": 0.07,
+    "risingStreak": 0
+  },
+  "SWARM": {
+    "min5": -0.94,
+    "risingStreak": 0
+  },
+  "OSMO": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "TSLAON": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "MANTA": {
+    "min5": 0.37,
+    "risingStreak": 0
+  },
+  "MEME": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "BUCK": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "CPOOL": {
+    "min5": 0.53,
+    "risingStreak": 0
+  },
+  "XAN": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "ABT": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "FILQA": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "IOST": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "EV": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SOLV": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "NEIRO": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "MMT": {
+    "min5": 0.16,
+    "risingStreak": 0
+  },
+  "BORA": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "REKT": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "CT": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "ELON": {
+    "min5": -0.81,
+    "risingStreak": 0
+  },
+  "SWFTC": {
+    "min5": -0.18,
+    "risingStreak": 0
+  },
+  "BCSPX": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ZEREBRO": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "ON": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "HOOKR": {
+    "min5": 0.24,
+    "risingStreak": 0
+  },
+  "EUSD": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "SIGN": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "LUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "PUNDIX": {
+    "min5": 0.09,
+    "risingStreak": 0
+  },
+  "UP": {
+    "min5": -0.14,
+    "risingStreak": 0
+  },
+  "MVL": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "HIVE": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "USTC": {
+    "min5": 0.29,
+    "risingStreak": 0
+  },
+  "EUL": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "CARV": {
+    "min5": 0.12,
+    "risingStreak": 0
+  },
+  "BSB": {
+    "min5": -0.04,
+    "risingStreak": 0
+  },
+  "SQD": {
+    "min5": 0.07,
+    "risingStreak": 0
+  },
+  "CTSI": {
+    "min5": 0.12,
+    "risingStreak": 0
+  },
+  "SPYB": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "VANA": {
+    "min5": 0.2,
+    "risingStreak": 0
+  },
+  "VELVET": {
+    "min5": -0.22,
+    "risingStreak": 0
+  },
+  "HOME": {
+    "min5": -0.21,
+    "risingStreak": 0
+  },
+  "ILV": {
+    "min5": 0.09,
+    "risingStreak": 0
+  },
+  "ETN": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "FLUX": {
+    "min5": 0.09,
+    "risingStreak": 0
+  },
+  "MTL": {
+    "min5": 0.18,
+    "risingStreak": 0
+  },
+  "ETHW": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "XCH": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ZORA": {
+    "min5": 0.26,
+    "risingStreak": 0
+  },
+  "HYUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SKL": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "ARDR": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "AT": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "GRVT": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "AUCTION": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "BULLA": {
+    "min5": 0.2,
+    "risingStreak": 0
+  },
+  "EDGE": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "PREOPAI": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "LON": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "FRAX": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "USDP": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "WOO": {
+    "min5": -0.18,
+    "risingStreak": 0
+  },
+  "G": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "DODO": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "ZEST": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "EWT": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "TIG": {
+    "min5": -0.08,
+    "risingStreak": 0
+  },
+  "WAVES": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "KNC": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "GOOGLON": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "AO": {
+    "min5": -0.33,
+    "risingStreak": 0
+  },
+  "SPACE": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "METIS": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "SPY": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "CLOUD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "HUMA": {
+    "min5": -0.93,
+    "risingStreak": 0
+  },
+  "MSTRON": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "CTR": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "RVN": {
+    "min5": 0.2,
+    "risingStreak": 0
+  },
+  "BDCA": {
+    "min5": 0.13,
+    "risingStreak": 0
+  },
+  "WHITE": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "MLK": {
+    "min5": 0.71,
+    "risingStreak": 0
+  },
+  "USDH": {
+    "min5": -0.15,
+    "risingStreak": 0
+  },
+  "STRAX": {
+    "min5": -0.06,
+    "risingStreak": 0
+  },
+  "DNA": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "BLUR": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "AXIS": {
+    "min5": -0.16,
+    "risingStreak": 0
+  },
+  "OM": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "MANTRA": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "NYM": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "CVC": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "FLOCK": {
+    "min5": 0.1,
+    "risingStreak": 0
+  },
+  "TSLAB": {
+    "min5": -0.04,
+    "risingStreak": 0
+  },
+  "XNY": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "LA": {
+    "min5": 0.1,
+    "risingStreak": 0
+  },
+  "STRX": {
+    "min5": -5.5,
+    "risingStreak": 0
+  },
+  "USUAL": {
+    "min5": -0.05,
+    "risingStreak": 0
+  },
+  "YGG": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "ZBT": {
+    "min5": 0.09,
+    "risingStreak": 0
+  },
+  "KGEN": {
+    "min5": 0.33,
+    "risingStreak": 0
+  },
+  "SIREN": {
+    "min5": -2.96,
+    "risingStreak": 0
+  },
+  "ANSEM": {
+    "min5": -0.07,
+    "risingStreak": 0
+  },
+  "SLVON": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "SKHYB": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "TLTON": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "SN75": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "EDEN": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "CNPY": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "CORE": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "CELR": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "HYPER": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "TNSR": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "CETUS": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "GMT": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "CYBER": {
+    "min5": 0.45,
+    "risingStreak": 0
+  },
+  "NXUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "IQ": {
+    "min5": 0.22,
+    "risingStreak": 0
+  },
+  "BIB01": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "BANK": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "FARTBOY": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "HEMI": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "AVA": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "CLO": {
+    "min5": 0.15,
+    "risingStreak": 0
+  },
+  "SATS": {
+    "min5": 0.35,
+    "risingStreak": 0
+  },
+  "HINC": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "WAXP": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "BREV": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "USDSM": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "DRAMB": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "LUMIA": {
+    "min5": 0.15,
+    "risingStreak": 0
+  },
+  "BOB": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "PUMPCADE": {
+    "min5": 0.41,
+    "risingStreak": 0
+  },
+  "CBK": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "AEVO": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "USDPT": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "LQTY": {
+    "min5": 0.31,
+    "risingStreak": 0
+  },
+  "PMT": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ELSA": {
+    "min5": -0.29,
+    "risingStreak": 0
+  },
+  "RHEA": {
+    "min5": 0.18,
+    "risingStreak": 0
+  },
+  "TA": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "USDM": {
+    "min5": -0.14,
+    "risingStreak": 0
+  },
+  "OGN": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "ZCAT": {
+    "min5": 0.4,
+    "risingStreak": 0
+  },
+  "BMT": {
+    "min5": 0.45,
+    "risingStreak": 0
+  },
+  "SLP": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "GIGA": {
+    "min5": -0.09,
+    "risingStreak": 0
+  },
+  "ZYLO": {
+    "min5": 0.15,
+    "risingStreak": 0
+  },
+  "AUDIO": {
+    "min5": -0.14,
+    "risingStreak": 0
+  },
+  "TREAD": {
+    "min5": -0.12,
+    "risingStreak": 0
+  },
+  "NXT": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "COINB": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "APR": {
+    "min5": 0.36,
+    "risingStreak": 0
+  },
+  "STANDARD": {
+    "min5": 1.23,
+    "risingStreak": 0
+  },
+  "BIGTIME": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "GCOIN": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "KORUB": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "IEFAON": {
+    "min5": -0.06,
+    "risingStreak": 0
+  },
+  "OLAS": {
+    "min5": -0.26,
+    "risingStreak": 0
+  },
+  "OPAIPON": {
+    "min5": 0.48,
+    "risingStreak": 0
+  },
+  "TAIKO": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "STONKBROKER": {
+    "min5": -0.05,
+    "risingStreak": 0
+  },
+  "TX": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "HUNT": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "STAR": {
+    "min5": -0.83,
+    "risingStreak": 0
+  },
+  "ERG": {
+    "min5": -0.06,
+    "risingStreak": 0
+  },
+  "B2": {
+    "min5": 0.6,
+    "risingStreak": 0
+  },
+  "QANX": {
+    "min5": 0.09,
+    "risingStreak": 0
+  },
+  "NAORIS": {
+    "min5": 0.17,
+    "risingStreak": 0
+  },
+  "ARPA": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "FUN": {
+    "min5": 1.47,
+    "risingStreak": 0
+  },
+  "BLKGRWON": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "DIA": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "BROCCOLI": {
+    "min5": 0.56,
+    "risingStreak": 0
+  },
+  "CGPT": {
+    "min5": 0.8,
+    "risingStreak": 0
+  },
+  "RSC": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "MY": {
+    "min5": 0.36,
+    "risingStreak": 0
+  },
+  "FAI": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "EDEL": {
+    "min5": -0.42,
+    "risingStreak": 0
+  },
+  "GAME": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "XDP": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "QKC": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ABEL": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "FORT": {
+    "min5": -0.15,
+    "risingStreak": 0
+  },
+  "MED": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "MAG7XON": {
+    "min5": 0.26,
+    "risingStreak": 0
+  },
+  "DOGS": {
+    "min5": 0.26,
+    "risingStreak": 0
+  },
+  "DEBIT": {
+    "min5": -0.13,
+    "risingStreak": 0
+  },
+  "PYBOBO": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "XYM": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "QIE": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "WMTX": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "MEY": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "SURPLUS": {
+    "min5": -1.11,
+    "risingStreak": 0
+  },
+  "FIDA": {
+    "min5": 0.15,
+    "risingStreak": 0
+  },
+  "AIXBT": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "AGLD": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "DAG": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "FROGGIE": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "WCT": {
+    "min5": 0.17,
+    "risingStreak": 0
+  },
+  "POKT": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "LUCA": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "GTC": {
+    "min5": 0.16,
+    "risingStreak": 0
+  },
+  "BBT": {
+    "min5": -0.17,
+    "risingStreak": 0
+  },
+  "EUROP": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "PUFFER": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "KAIO": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "CLANKER": {
+    "min5": -0.09,
+    "risingStreak": 0
+  },
+  "ACE": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "HEGIC": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "BLESS": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "POWER": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "CHR": {
+    "min5": 0.1,
+    "risingStreak": 0
+  },
+  "YB": {
+    "min5": 0.22,
+    "risingStreak": 0
+  },
+  "DKA": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "BICO": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "ANYONE": {
+    "min5": -0.57,
+    "risingStreak": 0
+  },
+  "CYS": {
+    "min5": 0.18,
+    "risingStreak": 0
+  },
+  "HAROLD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "CRYPGPT": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "FTRB": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "TUT": {
+    "min5": -0.08,
+    "risingStreak": 0
+  },
+  "NCT": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "MIRA": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "AGGON": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ISLM": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "RATS": {
+    "min5": 0.2,
+    "risingStreak": 0
+  },
+  "MOB": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "FIRO": {
+    "min5": -0.34,
+    "risingStreak": 0
+  },
+  "CTK": {
+    "min5": 0.12,
+    "risingStreak": 0
+  },
+  "ANIME": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "VRSC": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ORDER": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SPCX": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ESIM": {
+    "min5": -0.05,
+    "risingStreak": 0
+  },
+  "RAD": {
+    "min5": -0.16,
+    "risingStreak": 0
+  },
+  "UCN": {
+    "min5": -0.3,
+    "risingStreak": 0
+  },
+  "DOOD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "F": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "XAI": {
+    "min5": 0.13,
+    "risingStreak": 0
+  },
+  "PRL": {
+    "min5": 0.16,
+    "risingStreak": 0
+  },
+  "TBK": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "KULA": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "PIPPIN": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "US": {
+    "min5": -0.14,
+    "risingStreak": 0
+  },
+  "GOAT": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "MOVR": {
+    "min5": 0.54,
+    "risingStreak": 0
+  },
+  "BTRST": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "CAT": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "FOLD": {
+    "min5": 0.09,
+    "risingStreak": 0
+  },
+  "MBL": {
+    "min5": -0.08,
+    "risingStreak": 0
+  },
+  "STG": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "COLLECT": {
+    "min5": 0.29,
+    "risingStreak": 0
+  },
+  "KAT": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "ERA": {
+    "min5": 0.2,
+    "risingStreak": 0
+  },
+  "BITCOIN": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "INC": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "BONE": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "PRESPCX": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "SPCXON": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "SGB": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "USDO": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "M87": {
+    "min5": -0.08,
+    "risingStreak": 0
+  },
+  "KERNEL": {
+    "min5": -0.05,
+    "risingStreak": 0
+  },
+  "CAW": {
+    "min5": -0.18,
+    "risingStreak": 0
+  },
+  "QI": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "JOE": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "AIC": {
+    "min5": 0.15,
+    "risingStreak": 0
+  },
+  "RIO": {
+    "min5": -0.12,
+    "risingStreak": 0
+  },
+  "CHEX": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SPELL": {
+    "min5": 0.13,
+    "risingStreak": 0
+  },
+  "XSGD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "MNDE": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ZENT": {
+    "min5": -0.35,
+    "risingStreak": 0
+  },
+  "COINX": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "AAPLX": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "CACAO": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "GNOT": {
+    "min5": -0.04,
+    "risingStreak": 0
+  },
+  "BANANA": {
+    "min5": 0.12,
+    "risingStreak": 0
+  },
+  "SOFION": {
+    "min5": 0.13,
+    "risingStreak": 0
+  },
+  "FOGO": {
+    "min5": -0.19,
+    "risingStreak": 0
+  },
+  "CET": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "MYX": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "UKTBL": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ALICE": {
+    "min5": 0.12,
+    "risingStreak": 0
+  },
+  "OSAK": {
+    "min5": 0.56,
+    "risingStreak": 0
+  },
+  "ITOTON": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "C": {
+    "min5": -0.1,
+    "risingStreak": 0
+  },
+  "HONEY": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "USDCV": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "PDDON": {
+    "min5": -0.16,
+    "risingStreak": 0
+  },
+  "WET": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "C98": {
+    "min5": 0.07,
+    "risingStreak": 0
+  },
+  "GP": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "EGL1": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "BTR": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "PEPECOIN": {
+    "min5": -1.01,
+    "risingStreak": 0
+  },
+  "STBL": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SAPIEN": {
+    "min5": 0.09,
+    "risingStreak": 0
+  },
+  "LQR": {
+    "min5": -0.98,
+    "risingStreak": 0
+  },
+  "DOLO": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "EFAON": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "ANDY": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "SERV": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "LAYER": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "ZTC": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "EDENA": {
+    "min5": 0.49,
+    "risingStreak": 0
+  },
+  "HFUN": {
+    "min5": -0.17,
+    "risingStreak": 0
+  },
+  "TRUST": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "XAVA": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "TST": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "PARTI": {
+    "min5": -1.49,
+    "risingStreak": 0
+  },
+  "TIPON": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "GRIFFAIN": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "BILL": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "BASED": {
+    "min5": 0.1,
+    "risingStreak": 0
+  },
+  "PRIORS": {
+    "min5": 0.21,
+    "risingStreak": 0
+  },
+  "BLEND": {
+    "min5": -0.13,
+    "risingStreak": 0
+  },
+  "PORTAL": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "SBC": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SLC": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "METAX": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "OG": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "APTM": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "ROBO": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "LIGHT": {
+    "min5": -0.1,
+    "risingStreak": 0
+  },
+  "AAPLON": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "CP": {
+    "min5": 0.13,
+    "risingStreak": 0
+  },
+  "DIAM": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "RUJI": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "HP": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "LRC": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "NST": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "BOX": {
+    "min5": 0.1,
+    "risingStreak": 0
+  },
+  "AMZNX": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "WALLET": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "BERT": {
+    "min5": -0.04,
+    "risingStreak": 0
+  },
+  "LOCUS": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "AGI": {
+    "min5": -0.11,
+    "risingStreak": 0
+  },
+  "LINGO": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "PRIME": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "VERONA": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "DYM": {
+    "min5": 0.13,
+    "risingStreak": 0
+  },
+  "XION": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "TGC": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ANT": {
+    "min5": -0.13,
+    "risingStreak": 0
+  },
+  "DESO": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "POND": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "LAVA": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "MAV": {
+    "min5": 0.28,
+    "risingStreak": 0
+  },
+  "DOVU": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "CYC": {
+    "min5": -0.19,
+    "risingStreak": 0
+  },
+  "ALI": {
+    "min5": -0.06,
+    "risingStreak": 0
+  },
+  "ELA": {
+    "min5": 0.26,
+    "risingStreak": 0
+  },
+  "ENSO": {
+    "min5": 0.2,
+    "risingStreak": 0
+  },
+  "RARE": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "INTCON": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "ACT": {
+    "min5": -2.75,
+    "risingStreak": 0
+  },
+  "AIO": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "MSFTON": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "KOMA": {
+    "min5": -0.11,
+    "risingStreak": 0
+  },
+  "PONKE": {
+    "min5": -0.1,
+    "risingStreak": 0
+  },
+  "AMZNON": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "EL": {
+    "min5": -0.51,
+    "risingStreak": 0
+  },
+  "SLX": {
+    "min5": 0.12,
+    "risingStreak": 0
+  },
+  "DESU": {
+    "min5": -0.59,
+    "risingStreak": 0
+  },
+  "HOPR": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "DRB": {
+    "min5": 0.21,
+    "risingStreak": 0
+  },
+  "WAN": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "OGY": {
+    "min5": -0.07,
+    "risingStreak": 0
+  },
+  "HOODX": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "DRIFT": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "XU3O8": {
+    "min5": -0.05,
+    "risingStreak": 0
+  },
+  "TSMB": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "THOR": {
+    "min5": -0.31,
+    "risingStreak": 0
+  },
+  "GODS": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ROLL": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "IN": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "AVAIL": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "AVGOB": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "EVAA": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "IEMGON": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "FCT": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "BLUAI": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "CORN": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "IAG": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "LOFI": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "HMM": {
+    "min5": 1.78,
+    "risingStreak": 0
+  },
+  "DEOD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "CHEEL": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "NATIX": {
+    "min5": -0.12,
+    "risingStreak": 0
+  },
+  "RECALL": {
+    "min5": 0.14,
+    "risingStreak": 0
+  },
+  "CORGIAI": {
+    "min5": -0.22,
+    "risingStreak": 0
+  },
+  "SOIL": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "NUMI": {
+    "min5": -0.04,
+    "risingStreak": 0
+  },
+  "CHILLGUY": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "BOBA": {
+    "min5": -0.06,
+    "risingStreak": 0
+  },
+  "NBISB": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "LLYON": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "NEWT": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "SAUCE": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "WRX": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "INX": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "NAVX": {
+    "min5": 0.17,
+    "risingStreak": 0
+  },
+  "OXT": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "MRVLON": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "IWFON": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SGOVON": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "METAON": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ZKC": {
+    "min5": 0.34,
+    "risingStreak": 0
+  },
+  "HMSTR": {
+    "min5": -0.1,
+    "risingStreak": 0
+  },
+  "TRADOOR": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "BAL": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "USDB": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "IXS": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SENTIS": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "DEUS": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "QUAI": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "ROG": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "STORJ": {
+    "min5": -0.11,
+    "risingStreak": 0
+  },
+  "XTM": {
+    "min5": -0.1,
+    "risingStreak": 0
+  },
+  "MGO": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "SD": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "NEURAL": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "WELL": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "QUID": {
+    "min5": -0.11,
+    "risingStreak": 0
+  },
+  "PACT": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "GNS": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "GLMR": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "BEM": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "MRVLB": {
+    "min5": -0.04,
+    "risingStreak": 0
+  },
+  "ADX": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "LAPTOP": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "SMOLE": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "PEP": {
+    "min5": -0.06,
+    "risingStreak": 0
+  },
+  "NEXA": {
+    "min5": -0.19,
+    "risingStreak": 0
+  },
+  "FIGHT": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "AVL": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "WOD": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "TLM": {
+    "min5": 0.09,
+    "risingStreak": 0
+  },
+  "BEL": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "RIZE": {
+    "min5": -0.06,
+    "risingStreak": 0
+  },
+  "WOLF": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "BAY": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "ZKP": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "MWXT": {
+    "min5": -0.04,
+    "risingStreak": 0
+  },
+  "SONIC": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "PNK": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "DIMO": {
+    "min5": -0.1,
+    "risingStreak": 0
+  },
+  "BKN": {
+    "min5": 0.19,
+    "risingStreak": 0
+  },
+  "ACS": {
+    "min5": 0.15,
+    "risingStreak": 0
+  },
+  "SI": {
+    "min5": -0.21,
+    "risingStreak": 0
+  },
+  "RESOLV": {
+    "min5": 0.09,
+    "risingStreak": 0
+  },
+  "WE": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "GROVE": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "HEI": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "AMDON": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "COOKIE": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "GUN": {
+    "min5": 0.15,
+    "risingStreak": 0
+  },
+  "INV": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SPECTRE": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "BMNRON": {
+    "min5": 0.13,
+    "risingStreak": 0
+  },
+  "GAL": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "MBX": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "NAKA": {
+    "min5": 0.25,
+    "risingStreak": 0
+  },
+  "OPN": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "FUEL": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "ATM": {
+    "min5": -0.04,
+    "risingStreak": 0
+  },
+  "DNT": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "PNKSTR": {
+    "min5": 0.09,
+    "risingStreak": 0
+  },
+  "BASECAT": {
+    "min5": -0.73,
+    "risingStreak": 0
+  },
+  "CULT": {
+    "min5": -0.13,
+    "risingStreak": 0
+  },
+  "ASM": {
+    "min5": 0.28,
+    "risingStreak": 0
+  },
+  "COINON": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "SOPH": {
+    "min5": 0.79,
+    "risingStreak": 0
+  },
+  "BXN": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "GRND": {
+    "min5": -0.25,
+    "risingStreak": 0
+  },
+  "ALIGN": {
+    "min5": -0.05,
+    "risingStreak": 0
+  },
+  "SAGA": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "AITECH": {
+    "min5": -0.41,
+    "risingStreak": 0
+  },
+  "MCDULL": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "TLOS": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "EURS": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "BAR": {
+    "min5": -0.26,
+    "risingStreak": 0
+  },
+  "TOKEN": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "GMEB": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "SWARMS": {
+    "min5": -0.08,
+    "risingStreak": 0
+  },
+  "SDEX": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "PNDC": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "EEMON": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "MAVIA": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "GHX": {
+    "min5": 0.16,
+    "risingStreak": 0
+  },
+  "PAYAI": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "PAAL": {
+    "min5": -0.08,
+    "risingStreak": 0
+  },
+  "EVR": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ZEUS": {
+    "min5": 0.1,
+    "risingStreak": 0
+  },
+  "ASR": {
+    "min5": -0.08,
+    "risingStreak": 0
+  },
+  "SANTOS": {
+    "min5": 0.06,
+    "risingStreak": 0
+  },
+  "DUSD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "RBNT": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "PTGC": {
+    "min5": 1.17,
+    "risingStreak": 0
+  },
+  "REF": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "OMG": {
+    "min5": 0.57,
+    "risingStreak": 0
+  },
+  "DSYNC": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "TORCH": {
+    "min5": -0.65,
+    "risingStreak": 0
+  },
+  "COQ": {
+    "min5": 0.71,
+    "risingStreak": 0
+  },
+  "VINE": {
+    "min5": 0.1,
+    "risingStreak": 0
+  },
+  "AEON": {
+    "min5": 0.15,
+    "risingStreak": 0
+  },
+  "METFI": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SPARKLET": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "TAC": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "STO": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "TSMON": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "MAPO": {
+    "min5": -0.2,
+    "risingStreak": 0
+  },
+  "PSG": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "CLASH": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "AIA": {
+    "min5": 0.23,
+    "risingStreak": 0
+  },
+  "THQ": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "USDR": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "AAOIB": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "FLOAT": {
+    "min5": -1.98,
+    "risingStreak": 0
+  },
+  "SUPRA": {
+    "min5": -0.06,
+    "risingStreak": 0
+  },
+  "ZZZ": {
+    "min5": 0.32,
+    "risingStreak": 0
+  },
+  "LYN": {
+    "min5": -0.7,
+    "risingStreak": 0
+  },
+  "AURA": {
+    "min5": 0.89,
+    "risingStreak": 0
+  },
+  "PIKA": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ORAI": {
+    "min5": -0.12,
+    "risingStreak": 0
+  },
+  "BATON": {
+    "min5": 0.39,
+    "risingStreak": 0
+  },
+  "MNSRY": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "TURTLE": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "BADGER": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "KAN": {
+    "min5": 0.17,
+    "risingStreak": 0
+  },
+  "GFAL": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "SNXXB": {
+    "min5": 0.2,
+    "risingStreak": 0
+  },
+  "XRD": {
+    "min5": 0.21,
+    "risingStreak": 0
+  },
+  "PNG": {
+    "min5": -0.09,
+    "risingStreak": 0
+  },
+  "SHELL": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "ASTRA": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "LYX": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "BONER": {
+    "min5": -0.18,
+    "risingStreak": 0
+  },
+  "KISHU": {
+    "min5": 0.29,
+    "risingStreak": 0
+  },
+  "PIT": {
+    "min5": 0.18,
+    "risingStreak": 0
+  },
+  "TRIA": {
+    "min5": 0.13,
+    "risingStreak": 0
+  },
+  "ALCX": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "BEST": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "XBG": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "CREPE": {
+    "min5": 0.03,
+    "risingStreak": 0
+  },
+  "IWNON": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "UBIK": {
+    "min5": 0.12,
+    "risingStreak": 0
+  },
+  "PIPEDOG": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "LMWR": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "KRL": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "PRCL": {
+    "min5": 0.08,
+    "risingStreak": 0
+  },
+  "ASP": {
+    "min5": -0.81,
+    "risingStreak": 0
+  },
+  "AAPLB": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "SPS": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "DMTR": {
+    "min5": 0.28,
+    "risingStreak": 0
+  },
+  "XGZ": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "MPC": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "POLS": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "HTM": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "ALPH": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "THE": {
+    "min5": 0.25,
+    "risingStreak": 0
+  },
+  "HOODB": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "DAO": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "HAEDAL": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "TITANX": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "JAGER": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "VCHF": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "TQQQON": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "BIFI": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "UFD": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "TREE": {
+    "min5": 0.16,
+    "risingStreak": 0
+  },
+  "DJI6930": {
+    "min5": -0.16,
+    "risingStreak": 0
+  },
+  "XPLA": {
+    "min5": 0.11,
+    "risingStreak": 0
+  },
+  "SQGROW": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "BLUE": {
+    "min5": -0.16,
+    "risingStreak": 0
+  },
+  "AGRS": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "DPI": {
+    "min5": 0.17,
+    "risingStreak": 0
+  },
+  "PIN": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "HERO": {
+    "min5": -0.04,
+    "risingStreak": 0
+  },
+  "OL": {
+    "min5": 0.05,
+    "risingStreak": 0
+  },
+  "KLV": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "MIN": {
+    "min5": -0.1,
+    "risingStreak": 0
+  },
+  "SVL": {
+    "min5": 0,
+    "risingStreak": 0
+  }
+}
