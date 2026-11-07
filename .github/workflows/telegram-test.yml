@@ -1,0 +1,25 @@
+name: Telegram Connection Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  send-test-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send test message to Telegram group
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
+            echo "Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID repository secret."
+            exit 1
+          fi
+
+          response=$(curl --silent --show-error --fail-with-body \
+            -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=✅ Crypto Bubbles Scanner: Telegram connection test successful!")
+
+          echo "$response"
