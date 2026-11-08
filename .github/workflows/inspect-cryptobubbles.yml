@@ -104,7 +104,7 @@ jobs:
                   .filter(e => {
                     const t = (e.innerText || '').trim();
                     const r = e.getBoundingClientRect();
-                    return r.width > 0 && r.height > 0 && /^(5\\s*min|5m|5 min)$/i.test(t);
+                    return r.width > 0 && r.height > 0 && /^5\\s*min$/i.test(t);
                   })
                   .map(e => ({ tag:e.tagName, text:(e.innerText||'').trim(),
                     role:e.getAttribute('role'), className:String(e.className||''),
@@ -112,7 +112,7 @@ jobs:
               );
 
               let fiveMClicked = false;
-              const fiveM = page.getByText(/^5\\s*(min|m)$/i);
+              const fiveM = page.getByRole('button', { name: /^5\\s*min$/i });
               for (let i = 0; i < await fiveM.count(); i++) {
                 const candidate = fiveM.nth(i);
                 if (await candidate.isVisible().catch(() => false)) {
