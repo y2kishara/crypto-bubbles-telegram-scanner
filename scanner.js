@@ -6,7 +6,7 @@ const STATE_PATH = 'data/previous-scan.json';
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 const TELEGRAM_LIMIT = 4096;
-const VIEWPORT = { width: 1440, height: 900 };
+const VIEWPORT = { width: 1440, height: 900 }; // Fixed viewport defines the visible heatmap area scanned.
 
 if (!BOT_TOKEN || !CHAT_ID) {
   throw new Error('Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID GitHub Secrets.');
