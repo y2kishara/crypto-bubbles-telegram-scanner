@@ -1,10 +1,14 @@
 {
+  "ETH": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
   "XRP": {
-    "min5": 0.08,
-    "risingStreak": 1
+    "min5": -0.02,
+    "risingStreak": 0
   },
   "SOL": {
-    "min5": -0.01,
+    "min5": -0.03,
     "risingStreak": 0
   },
   "TRX": {
@@ -12,163 +16,155 @@
     "risingStreak": 0
   },
   "ZEC": {
-    "min5": 0.02,
-    "risingStreak": 1
+    "min5": -0.13,
+    "risingStreak": 0
   },
   "HYPE": {
-    "min5": 0.1,
-    "risingStreak": 1
-  },
-  "XMR": {
-    "min5": -0.08,
-    "risingStreak": 0
-  },
-  "DOGE": {
-    "min5": 0.03,
-    "risingStreak": 1
-  },
-  "LEO": {
-    "min5": -0.27,
-    "risingStreak": 0
-  },
-  "LINK": {
-    "min5": 0.06,
-    "risingStreak": 1
-  },
-  "ADA": {
-    "min5": -0.05,
-    "risingStreak": 0
-  },
-  "XLM": {
     "min5": -0.02,
     "risingStreak": 0
   },
-  "BCH": {
-    "min5": 0.1,
+  "XMR": {
+    "min5": -0.04,
+    "risingStreak": 0
+  },
+  "DOGE": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "LINK": {
+    "min5": -0.08,
+    "risingStreak": 0
+  },
+  "ADA": {
+    "min5": -0.11,
+    "risingStreak": 0
+  },
+  "XLM": {
+    "min5": 0.04,
     "risingStreak": 1
   },
+  "BCH": {
+    "min5": -0.1,
+    "risingStreak": 0
+  },
   "NEAR": {
-    "min5": -0.05,
+    "min5": -0.16,
     "risingStreak": 0
   },
   "UNI": {
-    "min5": 0.09,
-    "risingStreak": 1
+    "min5": -0.11,
+    "risingStreak": 0
   },
   "LTC": {
-    "min5": 0,
+    "min5": -0.12,
     "risingStreak": 0
   },
   "RAIN": {
-    "min5": 0.03,
-    "risingStreak": 1
+    "min5": 0.01,
+    "risingStreak": 0
   },
   "CC": {
-    "min5": 0.2,
-    "risingStreak": 1
+    "min5": -0.03,
+    "risingStreak": 0
   },
   "AVAX": {
-    "min5": 0.08,
-    "risingStreak": 1
+    "min5": -0.1,
+    "risingStreak": 0
   },
   "SUI": {
-    "min5": 0.01,
-    "risingStreak": 1
+    "min5": -0.06,
+    "risingStreak": 0
   },
   "TON": {
-    "min5": -0.1,
+    "min5": -0.21,
     "risingStreak": 0
   },
   "HBAR": {
     "min5": -0.03,
     "risingStreak": 0
   },
-  "QNT": {
-    "min5": -0.04,
-    "risingStreak": 0
-  },
   "SHIB": {
-    "min5": -0.07,
+    "min5": 0,
     "risingStreak": 0
   },
   "TAO": {
-    "min5": 0,
-    "risingStreak": 0
-  },
-  "CRO": {
-    "min5": -0.09,
-    "risingStreak": 0
-  },
-  "OKB": {
-    "min5": 0,
-    "risingStreak": 0
-  },
-  "ENA": {
-    "min5": 0,
-    "risingStreak": 0
-  },
-  "PEPE": {
-    "min5": 0.14,
-    "risingStreak": 1
-  },
-  "AAVE": {
-    "min5": -0.13,
-    "risingStreak": 0
-  },
-  "M": {
-    "min5": -0.01,
-    "risingStreak": 0
-  },
-  "BTW": {
-    "min5": -0.88,
-    "risingStreak": 0
-  },
-  "ONDO": {
-    "min5": 0,
-    "risingStreak": 0
-  },
-  "ASTER": {
     "min5": -0.02,
     "risingStreak": 0
   },
+  "CRO": {
+    "min5": -0.05,
+    "risingStreak": 0
+  },
+  "OKB": {
+    "min5": 0.01,
+    "risingStreak": 1
+  },
+  "ENA": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "PEPE": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "AAVE": {
+    "min5": -0.2,
+    "risingStreak": 0
+  },
+  "BTW": {
+    "min5": 0.51,
+    "risingStreak": 1
+  },
+  "ONDO": {
+    "min5": -0.07,
+    "risingStreak": 0
+  },
+  "ASTER": {
+    "min5": -0.03,
+    "risingStreak": 0
+  },
   "PUMP": {
-    "min5": -0.09,
+    "min5": -0.22,
     "risingStreak": 0
   },
   "DOT": {
-    "min5": -0.07,
-    "risingStreak": 0
-  },
-  "MNT": {
-    "min5": -0.07,
+    "min5": -0.04,
     "risingStreak": 0
   },
   "SKY": {
-    "min5": 0.04,
-    "risingStreak": 1
+    "min5": 0,
+    "risingStreak": 0
   },
-  "MORPHO": {
+  "MNT": {
     "min5": -0.01,
     "risingStreak": 0
   },
-  "WLFI": {
-    "min5": -0.08,
+  "MORPHO": {
+    "min5": -0.03,
     "risingStreak": 0
+  },
+  "WLFI": {
+    "min5": 0.02,
+    "risingStreak": 1
   },
   "HTX": {
     "min5": -0.01,
     "risingStreak": 0
   },
   "ICP": {
-    "min5": -0.05,
+    "min5": -0.12,
     "risingStreak": 0
   },
   "WLD": {
-    "min5": 0.03,
-    "risingStreak": 1
+    "min5": -0.13,
+    "risingStreak": 0
+  },
+  "BGB": {
+    "min5": -0.03,
+    "risingStreak": 0
   },
   "ARB": {
-    "min5": -0.03,
+    "min5": -0.08,
     "risingStreak": 0
   },
   "JST": {
@@ -176,47 +172,47 @@
     "risingStreak": 0
   },
   "ETC": {
-    "min5": -0.04,
+    "min5": -0.01,
     "risingStreak": 0
   },
   "GT": {
-    "min5": -0.03,
-    "risingStreak": 0
+    "min5": 0.44,
+    "risingStreak": 1
   },
   "VVV": {
-    "min5": 0,
+    "min5": -0.1,
     "risingStreak": 0
   },
   "POL": {
-    "min5": 0,
-    "risingStreak": 0
-  },
-  "ALGO": {
-    "min5": 0.13,
+    "min5": 0.03,
     "risingStreak": 1
   },
-  "PI": {
-    "min5": -0.99,
-    "risingStreak": 0
-  },
-  "KAS": {
-    "min5": -0.26,
-    "risingStreak": 0
-  },
-  "RENDER": {
+  "ALGO": {
     "min5": -0.08,
     "risingStreak": 0
   },
-  "INJ": {
-    "min5": -0.32,
+  "PI": {
+    "min5": 0.16,
+    "risingStreak": 1
+  },
+  "RENDER": {
+    "min5": -0.09,
+    "risingStreak": 0
+  },
+  "KAS": {
+    "min5": -0.13,
     "risingStreak": 0
   },
   "LIT": {
-    "min5": 0.06,
-    "risingStreak": 1
+    "min5": -0.11,
+    "risingStreak": 0
+  },
+  "INJ": {
+    "min5": -0.28,
+    "risingStreak": 0
   },
   "JUP": {
-    "min5": -0.04,
+    "min5": -0.03,
     "risingStreak": 0
   },
   "JLP": {
@@ -224,15 +220,15 @@
     "risingStreak": 0
   },
   "ATOM": {
-    "min5": -0.03,
+    "min5": -0.06,
     "risingStreak": 0
   },
   "NEXO": {
-    "min5": -0.03,
-    "risingStreak": 0
+    "min5": 0.02,
+    "risingStreak": 1
   },
   "NIGHT": {
-    "min5": -0.57,
+    "min5": -0.12,
     "risingStreak": 0
   },
   "FIL": {
@@ -240,35 +236,35 @@
     "risingStreak": 0
   },
   "ZRO": {
-    "min5": -0.17,
+    "min5": 0,
     "risingStreak": 0
   },
   "STX": {
-    "min5": -0.26,
+    "min5": -0.16,
     "risingStreak": 0
   },
   "CAKE": {
-    "min5": -0.07,
-    "risingStreak": 0
-  },
-  "XDC": {
-    "min5": -0.03,
-    "risingStreak": 0
-  },
-  "DASH": {
-    "min5": 0.02,
+    "min5": 0.01,
     "risingStreak": 1
   },
+  "XDC": {
+    "min5": 0.04,
+    "risingStreak": 1
+  },
+  "DASH": {
+    "min5": -0.06,
+    "risingStreak": 0
+  },
   "ETHFI": {
-    "min5": -0.12,
+    "min5": -0.04,
     "risingStreak": 0
   },
   "BDX": {
-    "min5": 0.05,
-    "risingStreak": 2
+    "min5": 0.06,
+    "risingStreak": 3
   },
   "APT": {
-    "min5": 0,
+    "min5": -0.01,
     "risingStreak": 0
   }
 }
