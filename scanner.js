@@ -88,7 +88,7 @@ async function captureVisibleBubbleSymbols() {
 
     const periodSelector = page.locator('button.configuration-select').first();
     if (!(await periodSelector.count())) throw new Error('Period selection control was not found.');
-    await periodSelector.click({ force: true });
+    await periodSelector.evaluate(el => el.click());
     await page.waitForTimeout(500);
 
     const fiveMin = page.getByRole('button', { name: '5 Min', exact: true });
