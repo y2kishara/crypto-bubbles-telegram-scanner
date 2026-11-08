@@ -2,6 +2,9 @@ name: Crypto Bubbles 5-Minute Scanner
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'scanner.js'
 
 permissions:
   contents: write
