@@ -38,24 +38,44 @@ jobs:
 
             // Record text painted into 2D canvases; bubble labels may not exist in the DOM.
             await page.addInitScript(() => {
-              const original = CanvasRenderingContext2D.prototype.fillText;
+              const ids = new WeakMap();
+              let nextId = 1;
+              const idFor = canvas => {
+                if (!ids.has(canvas)) ids.set(canvas, nextId++);
+                return ids.get(canvas);
+              };
+              const originalText = CanvasRenderingContext2D.prototype.fillText;
               CanvasRenderingContext2D.prototype.fillText = function(text, x, y, ...rest) {
                 try {
                   const canvas = this.canvas;
-                  const r = canvas.getBoundingClientRect();
-                  const item = {
-                    text: String(text),
-                    x: Math.round(Number(x) * (r.width / (canvas.width || 1)) + r.x),
-                    y: Math.round(Number(y) * (r.height / (canvas.height || 1)) + r.y),
-                    font: this.font,
-                    fillStyle: String(this.fillStyle),
-                    canvasWidth: canvas.width,
-                    canvasHeight: canvas.height
-                  };
                   window.__bubbleCanvasText = window.__bubbleCanvasText || [];
-                  window.__bubbleCanvasText.push(item);
+                  window.__bubbleCanvasText.push({
+                    canvasId: idFor(canvas), text: String(text), font: this.font,
+                    fillStyle: String(this.fillStyle), canvasWidth: canvas.width, canvasHeight: canvas.height
+                  });
                 } catch (_) {}
-                return original.call(this, text, x, y, ...rest);
+                return originalText.call(this, text, x, y, ...rest);
+              };
+              const originalImage = CanvasRenderingContext2D.prototype.drawImage;
+              CanvasRenderingContext2D.prototype.drawImage = function(source, ...args) {
+                try {
+                  if (source instanceof HTMLCanvasElement) {
+                    let dx, dy, dw, dh;
+                    if (args.length === 2) {
+                      [dx, dy] = args; dw = source.width; dh = source.height;
+                    } else if (args.length === 4) {
+                      [dx, dy, dw, dh] = args;
+                    } else if (args.length === 8) {
+                      [,,,, dx, dy, dw, dh] = args;
+                    }
+                    window.__bubbleDrawImages = window.__bubbleDrawImages || [];
+                    window.__bubbleDrawImages.push({
+                      sourceCanvasId: idFor(source), targetCanvasId: idFor(this.canvas),
+                      dx, dy, dw, dh, targetWidth: this.canvas.width, targetHeight: this.canvas.height
+                    });
+                  }
+                } catch (_) {}
+                return originalImage.call(this, source, ...args);
               };
             });
 
@@ -114,7 +134,7 @@ jobs:
                 const activeOptions = await page.locator('button.select-option.active').allInnerTexts();
                 fiveMClicked = activeOptions.some(t => t.trim() === '5 Min');
               }
-              if (fiveMClicked) await page.waitForTimeout(10000);
+              if (fiveMClicked) {\n                await page.waitForTimeout(2500);\n                await page.locator('button[title="Close window"]').click().catch(() => {});\n                await page.waitForTimeout(7000);\n              }
 
               const report = await page.evaluate(({ controls, clicked, periodMenuOpened, periodOptions }) => ({
                 title: document.title,
@@ -133,7 +153,7 @@ jobs:
                     visible: r.width > 0 && r.height > 0
                   };
                 }),
-                canvasText: window.__bubbleCanvasText || []
+                canvasText: window.__bubbleCanvasText || [],\n                canvasDrawImages: window.__bubbleDrawImages || [],\n                activePeriodOptions: [...document.querySelectorAll('button.select-option.active')].map(e => (e.innerText||'').trim())
               }), { controls: controlsBefore, clicked: fiveMClicked, periodMenuOpened });
 
               // Save the rendered page and each visible canvas for direct visual verification.
