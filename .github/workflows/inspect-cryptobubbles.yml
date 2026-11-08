@@ -123,7 +123,7 @@ jobs:
               }
               if (fiveMClicked) await page.waitForTimeout(10000);
 
-              const report = await page.evaluate(({ controls, clicked }) => ({
+              const report = await page.evaluate(({ controls, clicked, periodMenuOpened, periodOptions }) => ({
                 title: document.title,
                 viewport: { width: innerWidth, height: innerHeight, dpr: devicePixelRatio },
                 fiveMClicked: clicked,
