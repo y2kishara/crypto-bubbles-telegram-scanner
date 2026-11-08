@@ -154,7 +154,7 @@ async function captureVisibleBubbleSymbols() {
         const words = labels.get(sourceCanvasId) || [];
         // A real bubble canvas contains both its ticker and a percentage label.
         // This excludes short ad badges and other non-coin canvas text.
-        const hasPercent = words.some(w => /^[+-]?\\d+(?:\\.\\d+)?%$/.test(w));
+        const hasPercent = words.some(w => /^[+-]?\d+(?:\.\d+)?%$/.test(w));
         const symbol = words.find(w => /^[A-Z0-9]{1,12}$/.test(w));
         if (!hasPercent || !symbol || !Number.isFinite(d.dx) || !Number.isFinite(d.dy) ||
             !Number.isFinite(d.dw) || !Number.isFinite(d.dh)) continue;
