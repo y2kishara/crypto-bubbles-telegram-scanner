@@ -2,6 +2,10 @@ name: Crypto Bubbles 5-Minute Scanner
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'scanner.js'
+      - '.github/workflows/crypto-bubbles-scanner.yml'
 
 permissions:
   contents: write
@@ -13,7 +17,7 @@ concurrency:
 jobs:
   scan-and-notify:
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 10
     steps:
       - name: Check out scanner and previous scan state
         uses: actions/checkout@v4
