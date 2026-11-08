@@ -166,6 +166,49 @@ jobs:
                 activePeriodOptions: [...document.querySelectorAll('button.select-option.active')].map(e => (e.innerText||'').trim())
               }), { controls: controlsBefore, clicked: fiveMClicked, periodMenuOpened });
 
+              // Match bubble canvases to their ticker labels, then keep only bubbles
+              // whose drawn area intersects the actual heatmap canvas viewport.
+              const labelByCanvas = new Map();
+              for (const item of (report.canvasText || [])) {
+                const ticker = String(item.text || '').trim();
+                if (/^[A-Z0-9]{2,12}$/.test(ticker)) {
+                  if (!labelByCanvas.has(item.canvasId)) labelByCanvas.set(item.canvasId, ticker);
+                }
+              }
+              const heatmapCanvas = (report.canvases || [])
+                .filter(c => c.visible && c.width > 500 && c.height > 300)
+                .sort((a,b) => b.width*b.height - a.width*a.height)[0];
+              const targetDraws = (report.canvasDraws || []).filter(d =>
+                d.targetCanvasId === 2 || d.targetWidth === (heatmapCanvas && heatmapCanvas.width)
+              );
+              const bubbleByTicker = new Map();
+              for (const draw of targetDraws) {
+                const ticker = labelByCanvas.get(draw.sourceCanvasId);
+                if (!ticker || !heatmapCanvas) continue;
+                const x1 = Math.max(0, draw.dx);
+                const y1 = Math.max(0, draw.dy);
+                const x2 = Math.min(heatmapCanvas.width, draw.dx + draw.dw);
+                const y2 = Math.min(heatmapCanvas.height, draw.dy + draw.dh);
+                const visibleArea = Math.max(0, x2-x1) * Math.max(0, y2-y1);
+                if (visibleArea > 0) {
+                  const old = bubbleByTicker.get(ticker);
+                  const candidate = {
+                    symbol: ticker,
+                    x: Math.round(draw.dx), y: Math.round(draw.dy),
+                    width: Math.round(draw.dw), height: Math.round(draw.dh),
+                    visibleArea: Math.round(visibleArea)
+                  };
+                  if (!old || candidate.visibleArea > old.visibleArea) bubbleByTicker.set(ticker, candidate);
+                }
+              }
+              report.visibleBubbles = [...bubbleByTicker.values()];
+              report.visibleSymbols = report.visibleBubbles.map(b => b.symbol).sort();
+              report.heatmapCanvas = heatmapCanvas || null;
+              if (!report.fiveMClicked || !report.visibleSymbols.length) {
+                throw new Error('5 Min verification or visible bubble extraction failed');
+              }
+              console.log('Verified 5 Min. Visible heatmap tickers:', report.visibleSymbols.join(', '));
+
               // Save the rendered page and each visible canvas for direct visual verification.
               await page.screenshot({ path: 'heatmap-page.png', fullPage: false });
               const canvases = page.locator('canvas');
@@ -193,7 +236,7 @@ jobs:
                 '',
                 '## Text drawn into canvas (candidate bubble labels)',
                 '```json',
-                JSON.stringify(report.canvasText, null, 2),
+                JSON.stringify({ visibleSymbols: report.visibleSymbols, visibleBubbles: report.visibleBubbles, heatmapCanvas: report.heatmapCanvas }, null, 2),
                 '```'
               ].join('\n');
               fs.writeFileSync('visible-bubbles-report.md', summary);
