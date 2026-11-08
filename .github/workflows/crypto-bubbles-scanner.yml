@@ -2,10 +2,8 @@ name: Crypto Bubbles 5-Minute Scanner
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'scanner.js'
-      - '.github/workflows/crypto-bubbles-scanner.yml'
+  schedule:
+    - cron: '*/5 * * * *'
 
 permissions:
   contents: write
