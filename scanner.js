@@ -286,14 +286,16 @@ async function main() {
 
   const section = (title, list) => [
     title,
-    list.length ? list.map(c => `${c.symbol} ${signed(c.min5)}${c.improving ? ' 📈' : ''}`).join('  |  ') : 'None'
+    list.length ? list.map(c => `• ${c.symbol} — ${signed(c.min5)}${c.improving ? ' 📈' : ''}`).join('\n') : '• None'
   ].join('\n');
 
   const lines = [
     '🫧 CRYPTO BUBBLES — 5m SCAN',
     `🕒 ${stamp} (Sri Lanka time)`,
     `👀 Visible heatmap bubbles only: ${rows.length}`,
-    `🟢 ${green.length} UP  |  🔴 ${red.length} DOWN  |  ⚪ ${flat.length} FLAT`,
+    `🟢 UP: ${green.length}`,
+    `🔴 DOWN: ${red.length}`,
+    `⚪ FLAT: ${flat.length}`,
     '',
     section('🟢 GREEN / UP', green),
     '',
@@ -309,11 +311,22 @@ async function main() {
     const compact = [
       '🫧 CRYPTO BUBBLES — 5m SCAN',
       `🕒 ${stamp} (Sri Lanka time)`,
-      `👀 Visible bubbles: ${rows.length} | 🟢 ${green.length} 🔴 ${red.length} ⚪ ${flat.length}`,
-      `🟢 ${green.map(c => `${c.symbol} ${signed(c.min5)}`).join(' | ')}`,
-      `🔴 ${red.map(c => `${c.symbol} ${signed(c.min5)}`).join(' | ')}`,
-      `⚪ ${flat.map(c => c.symbol).join(' | ') || 'None'}`,
-      `📈 Improving: ${improving.map(c => `${c.symbol} ${signed(c.min5)}`).join(' | ') || 'None'}`
+      `👀 Visible bubbles: ${rows.length}`,
+      `🟢 UP: ${green.length}`,
+      `🔴 DOWN: ${red.length}`,
+      `⚪ FLAT: ${flat.length}`,
+      '',
+      '🟢 GREEN / UP',
+      green.map(c => `• ${c.symbol} — ${signed(c.min5)}`).join('\n') || '• None',
+      '',
+      '🔴 RED / DOWN',
+      red.map(c => `• ${c.symbol} — ${signed(c.min5)}`).join('\n') || '• None',
+      '',
+      '⚪ NEUTRAL',
+      flat.map(c => `• ${c.symbol} — ${signed(c.min5)}`).join('\n') || '• None',
+      '',
+      '📈 POSITIVE & INCREASING',
+      improving.map(c => `• ${c.symbol} — ${signed(c.min5)}`).join('\n') || '• None'
     ];
     message = compact.join('\n');
   }
