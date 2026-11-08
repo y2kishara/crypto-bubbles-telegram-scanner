@@ -112,7 +112,7 @@ async function captureVisibleBubbleSymbols() {
       throw new Error(`Website top timeframe is not 5m: ${selectedTopTab.join(', ')}`);
     }
 
-    const captured = await page.evaluate(() => {
+    const readCapture = () => page.evaluate(() => {
       const text = window.__bubbleCanvasText || [];
       const draws = window.__bubbleDrawImages || [];
       const canvas = [...document.querySelectorAll('canvas')]
@@ -179,6 +179,27 @@ async function captureVisibleBubbleSymbols() {
         drawCount: targetDraws.length
       };
     });
+
+    let captured = { visible: [], drawCount: 0, canvasRect: null };
+    for (let attempt = 1; attempt <= 4; attempt++) {
+      await page.waitForTimeout(attempt === 1 ? 2500 : 5000);
+      try {
+        captured = await readCapture();
+      } catch (error) {
+        console.warn(`Visible bubble capture attempt ${attempt} failed: ${error.message}`);
+      }
+      if (captured.visible && captured.visible.length) break;
+      console.warn(`Capture attempt ${attempt}: no readable bubbles yet; retrying.`);
+    }
+    if (!captured.visible || !captured.visible.length) {
+      const diagnostics = await page.evaluate(() => ({
+        textCalls: (window.__bubbleCanvasText || []).length,
+        drawCalls: (window.__bubbleDrawImages || []).length,
+        canvasCount: document.querySelectorAll('canvas').length,
+        bodyText: (document.body.innerText || '').slice(0, 600)
+      }));
+      throw new Error(`No readable visible bubbles after retries. Diagnostics: ${JSON.stringify(diagnostics)}`);
+    }
 
     const unique = new Map();
     for (const item of captured.visible) unique.set(item.symbol, item);
