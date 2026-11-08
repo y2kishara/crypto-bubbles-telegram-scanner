@@ -162,7 +162,8 @@ jobs:
                 }),
                 canvasText: window.__bubbleCanvasText || [],
                 canvasDraws: canvasDraws.map(d => ({ sourceCanvasId: d.sourceCanvasId, dx: d.dx, dy: d.dy, dw: d.dw, dh: d.dh, targetWidth: d.targetCanvas.width, targetHeight: d.targetCanvas.height })),
-                canvasDrawImages: window.__bubbleDrawImages || [],\n                activePeriodOptions: [...document.querySelectorAll('button.select-option.active')].map(e => (e.innerText||'').trim())
+                canvasDrawImages: window.__bubbleDrawImages || [],
+                activePeriodOptions: [...document.querySelectorAll('button.select-option.active')].map(e => (e.innerText||'').trim())
               }), { controls: controlsBefore, clicked: fiveMClicked, periodMenuOpened });
 
               // Save the rendered page and each visible canvas for direct visual verification.
