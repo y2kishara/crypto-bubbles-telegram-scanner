@@ -50,5 +50,6 @@ jobs:
             echo "No state changes to commit."
           else
             git commit -m "Update previous market scan state"
+            git pull --rebase origin main
             git push
           fi
