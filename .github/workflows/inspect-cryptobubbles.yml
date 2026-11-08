@@ -63,19 +63,43 @@ jobs:
               });
               await page.waitForTimeout(20000);
 
-              const fiveM = page.getByText('5m', { exact: true }).filter({ visible: true });
-              const count = await fiveM.count();
-              if (!count) {
-                throw new Error('Could not find a visible 5m timeframe control. Page text: ' +
-                  (await page.locator('body').innerText()).slice(0, 2500));
-              }
-              await fiveM.first().click();
-              await page.waitForTimeout(10000);
+              const controlsBefore = await page.evaluate(() =>
+                [...document.querySelectorAll('button,[role="button"],[role="tab"],select')]
+                  .map((e, i) => {
+                    const r = e.getBoundingClientRect();
+                    return {
+                      index: i, tag: e.tagName,
+                      text: (e.innerText || e.getAttribute('aria-label') || e.getAttribute('title') || '').trim(),
+                      ariaLabel: e.getAttribute('aria-label'),
+                      title: e.getAttribute('title'),
+                      role: e.getAttribute('role'),
+                      visible: r.width > 0 && r.height > 0,
+                      rect: { x: Math.round(r.x), y: Math.round(r.y),
+                        width: Math.round(r.width), height: Math.round(r.height) },
+                      html: e.outerHTML.slice(0, 500)
+                    };
+                  })
+              );
 
-              const report = await page.evaluate(() => ({
+              // Click 5m only if it is actually visible. Keep the evidence if it is absent.
+              const fiveM = page.getByText('5m', { exact: true });
+              let fiveMClicked = false;
+              for (let i = 0; i < await fiveM.count(); i++) {
+                const candidate = fiveM.nth(i);
+                if (await candidate.isVisible().catch(() => false)) {
+                  await candidate.click().catch(() => {});
+                  fiveMClicked = true;
+                  break;
+                }
+              }
+              if (fiveMClicked) await page.waitForTimeout(10000);
+
+              const report = await page.evaluate(({ controls, clicked }) => ({
                 title: document.title,
                 viewport: { width: innerWidth, height: innerHeight, dpr: devicePixelRatio },
-                bodyText: (document.body.innerText || '').slice(0, 3000),
+                fiveMClicked: clicked,
+                controls,
+                bodyText: (document.body.innerText || '').slice(0, 5000),
                 canvases: [...document.querySelectorAll('canvas')].map((c, i) => {
                   const r = c.getBoundingClientRect();
                   return {
@@ -86,7 +110,7 @@ jobs:
                   };
                 }),
                 canvasText: window.__bubbleCanvasText || []
-              }));
+              }), { controls: controlsBefore, clicked: fiveMClicked });
 
               // Save the rendered page and each visible canvas for direct visual verification.
               await page.screenshot({ path: 'heatmap-page.png', fullPage: false });
