@@ -2,6 +2,9 @@ name: Inspect Visible Crypto Bubbles
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/inspect-cryptobubbles.yml'
 
 jobs:
   inspect-visible-bubbles:
