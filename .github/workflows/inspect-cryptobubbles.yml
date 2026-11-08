@@ -63,27 +63,56 @@ jobs:
               });
               await page.waitForTimeout(20000);
 
+              // Open Edit chart, then inspect the Period selection control.
+              const editChart = page.locator('button[title="Edit chart"]');
+              if (await editChart.count()) {
+                await editChart.first().click().catch(() => {});
+                await page.waitForTimeout(1500);
+              }
+
               const controlsBefore = await page.evaluate(() =>
-                [...document.querySelectorAll('button,[role="button"],[role="tab"],select')]
+                [...document.querySelectorAll('button,[role="button"],[role="tab"],select,[role="menuitem"],[role="option"]')]
                   .map((e, i) => {
                     const r = e.getBoundingClientRect();
+                    const style = getComputedStyle(e);
                     return {
                       index: i, tag: e.tagName,
                       text: (e.innerText || e.getAttribute('aria-label') || e.getAttribute('title') || '').trim(),
                       ariaLabel: e.getAttribute('aria-label'),
                       title: e.getAttribute('title'),
                       role: e.getAttribute('role'),
-                      visible: r.width > 0 && r.height > 0,
+                      className: String(e.className || ''),
+                      visible: r.width > 0 && r.height > 0 && style.visibility !== 'hidden' && style.display !== 'none',
                       rect: { x: Math.round(r.x), y: Math.round(r.y),
                         width: Math.round(r.width), height: Math.round(r.height) },
-                      html: e.outerHTML.slice(0, 500)
+                      html: e.outerHTML.slice(0, 700)
                     };
                   })
               );
 
-              // Click 5m only if it is actually visible. Keep the evidence if it is absent.
-              const fiveM = page.getByText('5m', { exact: true });
+              // The period selector is the chart configuration dropdown (not the coin range selector).
+              const periodSelector = page.locator('button.configuration-select').first();
+              let periodMenuOpened = false;
+              if (await periodSelector.count()) {
+                await periodSelector.click({ force: true }).catch(() => {});
+                periodMenuOpened = true;
+                await page.waitForTimeout(1000);
+              }
+
+              const periodOptions = await page.evaluate(() =>
+                [...document.querySelectorAll('button,[role="option"],[role="menuitem"],li,div')]
+                  .filter(e => {
+                    const t = (e.innerText || '').trim();
+                    const r = e.getBoundingClientRect();
+                    return r.width > 0 && r.height > 0 && /^(5\\s*min|5m|5 min)$/i.test(t);
+                  })
+                  .map(e => ({ tag:e.tagName, text:(e.innerText||'').trim(),
+                    role:e.getAttribute('role'), className:String(e.className||''),
+                    html:e.outerHTML.slice(0,700) }))
+              );
+
               let fiveMClicked = false;
+              const fiveM = page.getByText(/^5\\s*(min|m)$/i);
               for (let i = 0; i < await fiveM.count(); i++) {
                 const candidate = fiveM.nth(i);
                 if (await candidate.isVisible().catch(() => false)) {
@@ -98,7 +127,9 @@ jobs:
                 title: document.title,
                 viewport: { width: innerWidth, height: innerHeight, dpr: devicePixelRatio },
                 fiveMClicked: clicked,
+                periodMenuOpened: periodMenuOpened,
                 controls,
+                periodOptions: periodOptions,
                 bodyText: (document.body.innerText || '').slice(0, 5000),
                 canvases: [...document.querySelectorAll('canvas')].map((c, i) => {
                   const r = c.getBoundingClientRect();
@@ -110,7 +141,7 @@ jobs:
                   };
                 }),
                 canvasText: window.__bubbleCanvasText || []
-              }), { controls: controlsBefore, clicked: fiveMClicked });
+              }), { controls: controlsBefore, clicked: fiveMClicked, periodMenuOpened });
 
               // Save the rendered page and each visible canvas for direct visual verification.
               await page.screenshot({ path: 'heatmap-page.png', fullPage: false });
