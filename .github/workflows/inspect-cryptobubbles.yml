@@ -102,26 +102,17 @@ jobs:
                 await page.waitForTimeout(1000);
               }
 
-              const periodOptions = await page.evaluate(() =>
-                [...document.querySelectorAll('button.select-option')]
-                  .filter(e => {
-                    const t = (e.innerText || '').trim();
-                    const r = e.getBoundingClientRect();
-                    return r.width > 0 && r.height > 0 && /^5\\s*min$/i.test(t);
-                  })
-                  .map(e => ({ text:(e.innerText||'').trim(), className:String(e.className||''),
-                    rect:(() => { const r=e.getBoundingClientRect(); return {x:r.x,y:r.y,width:r.width,height:r.height}; })() }))
-              );
+              const periodOptions = await page.locator('button.select-option').allInnerTexts();
 
-              // Select the visible Period option shown in the Edit chart panel.
+              // Select the exact visible Period option; it is a button labelled "5 Min".
               let fiveMClicked = false;
-              const fiveM = page.locator('button.select-option').filter({ hasText: /^5\\s*min$/i });
-              if (await fiveM.count()) {
+              const fiveM = page.getByRole('button', { name: '5 Min', exact: true });
+              const fiveMCount = await fiveM.count();
+              if (fiveMCount > 0 && await fiveM.first().isVisible()) {
                 await fiveM.first().click();
-                await page.waitForTimeout(1500);
-                const editorLabel = await page.locator('button.configuration-select').first().innerText().catch(() => '');
-                const activeFiveM = await page.locator('button.select-option.active').filter({ hasText: /^5\\s*min$/i }).count().catch(() => 0);
-                fiveMClicked = activeFiveM > 0 || /5\\s*min/i.test(editorLabel);
+                await page.waitForTimeout(2000);
+                const activeOptions = await page.locator('button.select-option.active').allInnerTexts();
+                fiveMClicked = activeOptions.some(t => t.trim() === '5 Min');
               }
               if (fiveMClicked) await page.waitForTimeout(10000);
 
