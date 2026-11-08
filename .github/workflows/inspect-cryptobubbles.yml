@@ -103,26 +103,25 @@ jobs:
               }
 
               const periodOptions = await page.evaluate(() =>
-                [...document.querySelectorAll('.select-option')]
+                [...document.querySelectorAll('button.select-option')]
                   .filter(e => {
                     const t = (e.innerText || '').trim();
                     const r = e.getBoundingClientRect();
                     return r.width > 0 && r.height > 0 && /^5\\s*min$/i.test(t);
                   })
-                  .map(e => ({ tag:e.tagName, text:(e.innerText||'').trim(),
-                    role:e.getAttribute('role'), className:String(e.className||''),
-                    html:e.outerHTML.slice(0,700) }))
+                  .map(e => ({ text:(e.innerText||'').trim(), className:String(e.className||''),
+                    rect:(() => { const r=e.getBoundingClientRect(); return {x:r.x,y:r.y,width:r.width,height:r.height}; })() }))
               );
 
-              // The site's period choices are div.select-option elements, not buttons.
+              // Select the visible Period option shown in the Edit chart panel.
               let fiveMClicked = false;
-              const fiveM = page.locator('.select-option').filter({ hasText: /^5\\s*min$/i });
+              const fiveM = page.locator('button.select-option').filter({ hasText: /^5\\s*min$/i });
               if (await fiveM.count()) {
                 await fiveM.first().click();
                 await page.waitForTimeout(1500);
-                const selectedPeriod = await page.locator('button.configuration-select .select-button-label').textContent().catch(() => '');
-                const menuStillOpen = await page.locator('.select-option').filter({ hasText: /^5\\s*min$/i }).isVisible().catch(() => false);
-                fiveMClicked = /^5\\s*min$/i.test((selectedPeriod || '').trim()) && !menuStillOpen;
+                const editorLabel = await page.locator('button.configuration-select').first().innerText().catch(() => '');
+                const activeFiveM = await page.locator('button.select-option.active').filter({ hasText: /^5\\s*min$/i }).count().catch(() => 0);
+                fiveMClicked = activeFiveM > 0 || /5\\s*min/i.test(editorLabel);
               }
               if (fiveMClicked) await page.waitForTimeout(10000);
 
