@@ -25,7 +25,13 @@ jobs:
         with:
           node-version: 22
 
-      - name: Fetch 5-minute market data and send Telegram report
+      - name: Install Playwright browser
+        run: |
+          npm init -y
+          npm install playwright
+          npx playwright install --with-deps chromium
+
+      - name: Capture visible 5-minute bubbles and send Telegram report
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
