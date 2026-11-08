@@ -177,7 +177,7 @@ jobs:
               }
               for (const [canvasId, values] of textByCanvas) {
                 // A real bubble has both a ticker and its percentage label.
-                if (!values.some(v => /^[+-]?\\d+(?:\\.\\d+)?%$/.test(v))) continue;
+                if (!values.some(v => /^[+-]?\d+(?:\.\d+)?%$/.test(v))) continue;
                 const ticker = values.find(v => /^[A-Z0-9]{2,12}$/.test(v));
                 if (ticker) labelByCanvas.set(canvasId, ticker);
               }
