@@ -161,7 +161,7 @@ jobs:
                   };
                 }),
                 canvasText: window.__bubbleCanvasText || [],
-                canvasDraws: canvasDraws.map(d => ({ sourceCanvasId: d.sourceCanvasId, dx: d.dx, dy: d.dy, dw: d.dw, dh: d.dh, targetWidth: d.targetCanvas.width, targetHeight: d.targetCanvas.height })),
+                canvasDraws: window.__bubbleDrawImages || [],
                 canvasDrawImages: window.__bubbleDrawImages || [],
                 activePeriodOptions: [...document.querySelectorAll('button.select-option.active')].map(e => (e.innerText||'').trim())
               }), { controls: controlsBefore, clicked: fiveMClicked, periodMenuOpened });
