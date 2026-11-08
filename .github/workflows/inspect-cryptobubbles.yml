@@ -103,7 +103,7 @@ jobs:
               }
 
               const periodOptions = await page.evaluate(() =>
-                [...document.querySelectorAll('button,[role="option"],[role="menuitem"],li,div')]
+                [...document.querySelectorAll('.select-option')]
                   .filter(e => {
                     const t = (e.innerText || '').trim();
                     const r = e.getBoundingClientRect();
@@ -114,15 +114,15 @@ jobs:
                     html:e.outerHTML.slice(0,700) }))
               );
 
+              // The site's period choices are div.select-option elements, not buttons.
               let fiveMClicked = false;
-              const fiveM = page.getByRole('button', { name: /^5\\s*min$/i });
-              for (let i = 0; i < await fiveM.count(); i++) {
-                const candidate = fiveM.nth(i);
-                if (await candidate.isVisible().catch(() => false)) {
-                  await candidate.click().catch(() => {});
-                  fiveMClicked = true;
-                  break;
-                }
+              const fiveM = page.locator('.select-option').filter({ hasText: /^5\\s*min$/i });
+              if (await fiveM.count()) {
+                await fiveM.first().click();
+                await page.waitForTimeout(1500);
+                const selectedPeriod = await page.locator('button.configuration-select .select-button-label').textContent().catch(() => '');
+                const menuStillOpen = await page.locator('.select-option').filter({ hasText: /^5\\s*min$/i }).isVisible().catch(() => false);
+                fiveMClicked = /^5\\s*min$/i.test((selectedPeriod || '').trim()) && !menuStillOpen;
               }
               if (fiveMClicked) await page.waitForTimeout(10000);
 
