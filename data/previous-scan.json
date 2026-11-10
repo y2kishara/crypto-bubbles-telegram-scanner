@@ -1,262 +1,270 @@
 {
-  "BTC": {
-    "min5": -0.08,
-    "risingStreak": 0
-  },
   "ETH": {
-    "min5": -0.11,
+    "min5": 0.02,
+    "risingStreak": 1
+  },
+  "BNB": {
+    "min5": 0,
     "risingStreak": 0
   },
   "XRP": {
-    "min5": -0.25,
-    "risingStreak": 0
+    "min5": 0.15,
+    "risingStreak": 1
   },
   "SOL": {
     "min5": -0.05,
     "risingStreak": 0
   },
   "ZEC": {
-    "min5": -0.01,
-    "risingStreak": 0
+    "min5": 0.12,
+    "risingStreak": 1
   },
   "HYPE": {
-    "min5": -0.21,
-    "risingStreak": 0
-  },
-  "XMR": {
-    "min5": -2.9,
-    "risingStreak": 0
-  },
-  "WBT": {
-    "min5": 0.05,
-    "risingStreak": 0
-  },
-  "ADA": {
-    "min5": -0.08,
-    "risingStreak": 0
-  },
-  "XLM": {
-    "min5": -0.09,
-    "risingStreak": 0
-  },
-  "BCH": {
-    "min5": 0.01,
-    "risingStreak": 0
-  },
-  "NEAR": {
-    "min5": -0.14,
-    "risingStreak": 0
-  },
-  "UNI": {
-    "min5": -0.15,
-    "risingStreak": 0
-  },
-  "LTC": {
-    "min5": -0.04,
-    "risingStreak": 0
-  },
-  "AVAX": {
-    "min5": -0.1,
-    "risingStreak": 0
-  },
-  "CC": {
-    "min5": -0.02,
-    "risingStreak": 0
-  },
-  "SUI": {
-    "min5": -0.13,
-    "risingStreak": 0
-  },
-  "RAIN": {
-    "min5": 0.01,
-    "risingStreak": 1
-  },
-  "TON": {
-    "min5": -0.63,
-    "risingStreak": 0
-  },
-  "HBAR": {
-    "min5": 0.08,
-    "risingStreak": 1
-  },
-  "QNT": {
-    "min5": 0.04,
-    "risingStreak": 0
-  },
-  "TAO": {
-    "min5": -0.13,
-    "risingStreak": 0
-  },
-  "CRO": {
-    "min5": 0.08,
-    "risingStreak": 0
-  },
-  "PEPE": {
     "min5": -0.06,
     "risingStreak": 0
   },
-  "ENA": {
-    "min5": -0.19,
-    "risingStreak": 0
-  },
-  "OKB": {
-    "min5": -0.03,
-    "risingStreak": 0
-  },
-  "AAVE": {
-    "min5": -0.16,
-    "risingStreak": 0
-  },
-  "ONDO": {
-    "min5": -0.05,
-    "risingStreak": 0
-  },
-  "M": {
-    "min5": 0.18,
-    "risingStreak": 1
-  },
-  "ASTER": {
-    "min5": 0.06,
-    "risingStreak": 0
-  },
-  "PUMP": {
+  "DOGE": {
     "min5": -0.01,
     "risingStreak": 0
   },
-  "WLFI": {
+  "XMR": {
+    "min5": 0.05,
+    "risingStreak": 1
+  },
+  "LEO": {
+    "min5": 0.04,
+    "risingStreak": 0
+  },
+  "ADA": {
+    "min5": 0.03,
+    "risingStreak": 1
+  },
+  "BCH": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "NEAR": {
+    "min5": -0.23,
+    "risingStreak": 0
+  },
+  "UNI": {
+    "min5": -0.05,
+    "risingStreak": 0
+  },
+  "LTC": {
+    "min5": 0.01,
+    "risingStreak": 1
+  },
+  "AVAX": {
+    "min5": 0.07,
+    "risingStreak": 1
+  },
+  "CC": {
+    "min5": 0.04,
+    "risingStreak": 1
+  },
+  "SUI": {
+    "min5": -0.11,
+    "risingStreak": 0
+  },
+  "RAIN": {
+    "min5": 0.46,
+    "risingStreak": 2
+  },
+  "TON": {
+    "min5": 0.54,
+    "risingStreak": 1
+  },
+  "HBAR": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "QNT": {
+    "min5": -0.14,
+    "risingStreak": 0
+  },
+  "SHIB": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "TAO": {
     "min5": -0.03,
     "risingStreak": 0
   },
+  "CRO": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
+  "PEPE": {
+    "min5": -0.18,
+    "risingStreak": 0
+  },
+  "ENA": {
+    "min5": 0.43,
+    "risingStreak": 1
+  },
+  "OKB": {
+    "min5": 0,
+    "risingStreak": 0
+  },
+  "AAVE": {
+    "min5": -0.08,
+    "risingStreak": 0
+  },
+  "ONDO": {
+    "min5": 0.05,
+    "risingStreak": 1
+  },
+  "M": {
+    "min5": 0.28,
+    "risingStreak": 2
+  },
+  "ASTER": {
+    "min5": 0.02,
+    "risingStreak": 0
+  },
+  "PUMP": {
+    "min5": -0.02,
+    "risingStreak": 0
+  },
+  "WLFI": {
+    "min5": -0.01,
+    "risingStreak": 0
+  },
   "BTW": {
-    "min5": -0.09,
+    "min5": -0.03,
+    "risingStreak": 0
+  },
+  "MNT": {
+    "min5": 0.06,
     "risingStreak": 0
   },
   "DOT": {
-    "min5": -0.13,
+    "min5": 0.06,
+    "risingStreak": 1
+  },
+  "MORPHO": {
+    "min5": -0.05,
     "risingStreak": 0
   },
   "SKY": {
     "min5": -0.02,
     "risingStreak": 0
   },
-  "MORPHO": {
-    "min5": -0.02,
+  "HTX": {
+    "min5": 0.02,
     "risingStreak": 0
   },
   "ICP": {
-    "min5": -0.01,
-    "risingStreak": 0
-  },
-  "BGB": {
-    "min5": 0,
-    "risingStreak": 0
-  },
-  "ARB": {
-    "min5": 0.12,
+    "min5": 0.06,
     "risingStreak": 1
   },
-  "WLD": {
-    "min5": -0.02,
-    "risingStreak": 0
+  "BGB": {
+    "min5": 0.07,
+    "risingStreak": 1
   },
-  "JST": {
-    "min5": -0.3,
+  "ARB": {
+    "min5": -0.2,
     "risingStreak": 0
   },
   "ETC": {
-    "min5": 0,
+    "min5": 0.01,
+    "risingStreak": 1
+  },
+  "GT": {
+    "min5": -0.29,
     "risingStreak": 0
   },
   "VVV": {
-    "min5": 0.01,
-    "risingStreak": 0
-  },
-  "GT": {
-    "min5": 0.03,
+    "min5": -0.21,
     "risingStreak": 0
   },
   "KCS": {
-    "min5": -0.1,
-    "risingStreak": 0
-  },
-  "POL": {
     "min5": 0,
     "risingStreak": 0
   },
-  "ALGO": {
-    "min5": -0.04,
-    "risingStreak": 0
+  "POL": {
+    "min5": 0.03,
+    "risingStreak": 1
   },
   "RENDER": {
+    "min5": 0.06,
+    "risingStreak": 1
+  },
+  "ALGO": {
     "min5": 0,
     "risingStreak": 0
   },
   "JUP": {
-    "min5": 0,
+    "min5": -0.02,
     "risingStreak": 0
   },
   "KAS": {
-    "min5": 0.04,
-    "risingStreak": 2
+    "min5": 0.02,
+    "risingStreak": 0
   },
   "INJ": {
-    "min5": 0.14,
+    "min5": -0.02,
     "risingStreak": 0
   },
   "LIT": {
-    "min5": 0.08,
-    "risingStreak": 0
-  },
-  "JLP": {
-    "min5": 0,
+    "min5": -0.27,
     "risingStreak": 0
   },
   "PI": {
-    "min5": -0.13,
+    "min5": -0.05,
     "risingStreak": 0
   },
+  "JLP": {
+    "min5": 0.24,
+    "risingStreak": 1
+  },
   "ATOM": {
-    "min5": -0.01,
+    "min5": 0.15,
+    "risingStreak": 1
+  },
+  "NEXO": {
+    "min5": 0.09,
     "risingStreak": 0
   },
   "NIGHT": {
-    "min5": 0.28,
-    "risingStreak": 2
+    "min5": -0.17,
+    "risingStreak": 0
   },
   "FIL": {
-    "min5": -0.06,
-    "risingStreak": 0
+    "min5": 0.05,
+    "risingStreak": 1
   },
   "ETHFI": {
-    "min5": -0.1,
+    "min5": -0.01,
     "risingStreak": 0
   },
-  "DASH": {
+  "XDC": {
     "min5": -0.08,
     "risingStreak": 0
   },
   "ZRO": {
-    "min5": 0.07,
-    "risingStreak": 2
-  },
-  "XDC": {
-    "min5": -0.05,
+    "min5": 0.05,
     "risingStreak": 0
   },
-  "STX": {
-    "min5": 0.06,
-    "risingStreak": 1
-  },
-  "BDX": {
+  "DASH": {
     "min5": 0,
     "risingStreak": 0
   },
+  "CAKE": {
+    "min5": 0.01,
+    "risingStreak": 0
+  },
+  "STX": {
+    "min5": -0.12,
+    "risingStreak": 0
+  },
   "PIEVERSE": {
-    "min5": 2.88,
-    "risingStreak": 1
+    "min5": 0.81,
+    "risingStreak": 0
   },
   "STABLE": {
-    "min5": 0.16,
-    "risingStreak": 0
+    "min5": 0.29,
+    "risingStreak": 1
   }
 }
